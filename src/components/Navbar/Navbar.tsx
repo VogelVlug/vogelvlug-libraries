@@ -1,6 +1,5 @@
 "use client";
 
-import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import { ReactNode } from "react";
 import { Button } from "../Button/Button";
 import { ClickableLogo } from "../ClickableLogo/ClickableLogo";
@@ -21,6 +20,7 @@ interface NavbarProps {
     path: string;
     title: string;
   };
+  userMenu?: ReactNode;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
@@ -28,22 +28,28 @@ export const Navbar: React.FC<NavbarProps> = ({
   routes,
   secondaryCta,
   primaryCta,
+  userMenu,
 }) => {
   return (
     <div className="bg-default container mx-auto flex pt-4 pb-4 justify-between items-center">
       <ClickableLogo logo={logo} />
       <div className="flex gap-4">
         {routes.map((route) => (
-          <Button variant="tertiary" color="main" className="group">
+          <Button variant="tertiary" color="main" href={route.path}>
             {route.title}
           </Button>
         ))}
-        <Button variant="secondary" color="main" className="group">
-          {secondaryCta?.title}
-        </Button>
-        <Button variant="primary" color="main" className="group">
-          {primaryCta?.title}
-        </Button>
+        {secondaryCta && (
+          <Button variant="secondary" color="main" href={secondaryCta.path}>
+            {secondaryCta.title}
+          </Button>
+        )}
+        {primaryCta && (
+          <Button variant="primary" color="main" href={primaryCta.path}>
+            {primaryCta.title}
+          </Button>
+        )}
+        {userMenu}
       </div>
     </div>
   );
