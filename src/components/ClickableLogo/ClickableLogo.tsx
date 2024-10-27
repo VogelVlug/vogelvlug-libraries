@@ -23,26 +23,24 @@ export const ClickableLogo: React.FC<ClickableLogoProps> = ({
     12: "h-12",
   };
 
+  const props = {
+    alt: "Logo",
+    className: `${heightClassLookup[height]} w-auto`,
+  };
+
   if (isNext) {
     return (
       <Link href="/">
-        {/** TODO: Fix this any. Works, but isnt pretty */}
-        <Image
-          src={logo as any}
-          alt="Logo"
-          className={`${heightClassLookup[height]} w-auto`}
-        />
+        {/* eslint-disable-next-line jsx-a11y/alt-text */}
+        <Image src={logo as any} {...props} />
       </Link>
     );
   }
 
   return (
     <a href="/">
-      <img
-        src={logo.src}
-        alt="Logo"
-        className={`${heightClassLookup[height]} w-auto`}
-      />
+      {/* eslint-disable-next-line jsx-a11y/alt-text */}
+      <img src={logo.src} {...props} />
     </a>
   );
 };

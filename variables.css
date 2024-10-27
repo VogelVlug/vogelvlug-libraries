@@ -21,9 +21,23 @@
 :root {
   /* Mode 1 */
   /* color */
+  --accent-100: #ffeccc;
+  --accent-200: #ffd080;
+  --accent-300: #ffbd4d;
+  --accent-400: #ffa102;
+  --accent-500: #da8d0b;
+  --accent-600: #694a16;
+  --accent-700: #261d0d;
   --base-black: #000000;
   --base-transparent: #ffffff00;
   --base-white: #ffffff;
+  --main-100: #ccecff;
+  --main-200: #66c7ff;
+  --main-300: #00a2ff;
+  --main-400: #0a7fc2;
+  --main-500: #085f91;
+  --main-600: #003757;
+  --main-700: #031f30;
   --neutral-100: #f8fafb;
   --neutral-200: #e8eef2;
   --neutral-300: #c2cfd6;
@@ -31,20 +45,6 @@
   --neutral-500: #657883;
   --neutral-600: #2f3437;
   --neutral-700: #191a1a;
-  --primary-100: #ccecff;
-  --primary-200: #66c7ff;
-  --primary-300: #00a2ff;
-  --primary-400: #0a7fc2;
-  --primary-500: #085f91;
-  --primary-600: #003757;
-  --primary-700: #031f30;
-  --secondary-100: #ffeccc;
-  --secondary-200: #ffd080;
-  --secondary-300: #ffbd4d;
-  --secondary-400: #ffa102;
-  --secondary-500: #da8d0b;
-  --secondary-600: #694a16;
-  --secondary-700: #261d0d;
   --success-100: #d6fccf;
   --success-200: #adfa9e;
   --success-300: #5cf53d;
@@ -66,21 +66,21 @@
   /* color */
   --background-default: var(--neutral-100);
   --background-subtle: var(--neutral-200);
+  --border-color-accent: var(--accent-500);
+  --border-color-main: var(--main-500);
   --border-default: var(--neutral-300);
-  --border-primary: var(--primary-500);
-  --border-secondary: var(--secondary-500);
-  --fill-primary: var(--primary-300);
-  --fill-primary-hover: var(--primary-400);
-  --fill-primary-onfill: var(--base-white);
-  --fill-secondary: var(--secondary-400);
-  --fill-secondary-hover: var(--secondary-500);
-  --fill-secondary-onfill: var(--base-white);
+  --fill-accent: var(--accent-400);
+  --fill-accent-hover: var(--accent-500);
+  --fill-accent-onfill: var(--base-white);
+  --fill-main: var(--main-300);
+  --fill-main-hover: var(--main-400);
+  --fill-main-onfill: var(--base-white);
   --surface-default: var(--base-white);
   --text-caption: var(--neutral-400);
+  --text-color-accent: var(--accent-500);
+  --text-color-main: var(--main-500);
   --text-default: var(--neutral-600);
-  --text-overtitle: var(--primary-400);
-  --text-primary: var(--primary-500);
-  --text-secondary: var(--secondary-500);
+  --text-overtitle: var(--main-400);
   --text-subtitle: var(--neutral-400);
-  --text-title: var(--primary-600);
+  --text-title: var(--main-600);
 }
