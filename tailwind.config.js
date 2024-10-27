@@ -7,6 +7,11 @@ module.exports = {
     "./node_modules/vogelvlug-design-system/**/*.{html,js,ts,jsx,tsx}",
   ],
   theme: {
+    screens: {
+      sm: "392px",
+      md: "808px",
+      lg: "1224px",
+    },
     extend: {
       textColor: {
         default: "var(--text-default)",
