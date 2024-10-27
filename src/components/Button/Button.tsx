@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { PropsWithChildren, ReactNode } from "react";
 import { useDesignSystem } from "../../provider/DesignSystemProvider";
-
 interface ButtonProps {
   variant?: "primary" | "secondary" | "tertiary";
   color?: "main" | "accent";
@@ -11,6 +10,7 @@ interface ButtonProps {
   endIcon?: ReactNode;
   href?: string;
   onClick?: () => void;
+  className?: string;
 }
 
 export const Button: React.FC<PropsWithChildren<ButtonProps>> = ({
@@ -21,10 +21,11 @@ export const Button: React.FC<PropsWithChildren<ButtonProps>> = ({
   color = "main",
   startIcon,
   endIcon,
+  className,
 }) => {
   const { isNext } = useDesignSystem();
 
-  const Element = href ? "a" : "button";
+  const Element = href ? (isNext ? Link : "a") : "button";
 
   const classLoopUp = {
     primary: {
@@ -38,12 +39,23 @@ export const Button: React.FC<PropsWithChildren<ButtonProps>> = ({
         "border-accent text-color-accent border-2 hover:bg-accent-100 ring-neutral-200 focus:ring-4",
     },
     tertiary: {
-      main: "bg-transparent hover:bg-main-100",
+      main: "bg-transparent hover:bg-neutral-200",
       accent: "bg-transparent hover:bg-accent-100",
     },
   };
 
-  const className = `${classLoopUp[variant][color]} rounded-full transition px-6 py-2 transform active:scale-95`;
+  const combinedClassName = `${classLoopUp[variant][color]} rounded-full transition px-6 py-2 transform active:scale-95 flex items-center gap-2 ${className}`;
 
-  return <Element className={className}>{children}</Element>;
+  return (
+    <Element
+      // @ts-expect-error If it is a Next.js Link, there will be a href
+      href={href}
+      onClick={onClick}
+      className={combinedClassName}
+    >
+      {startIcon}
+      {children}
+      {endIcon}
+    </Element>
+  );
 };
