@@ -1,3 +1,13 @@
+@import "./variables.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+h1 {
+  @apply text-4xl text-title;
+}
+
+body {
+  @apply bg-default text-default;
+}
