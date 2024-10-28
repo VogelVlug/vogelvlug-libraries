@@ -44,7 +44,7 @@ export const Button: React.FC<PropsWithChildren<ButtonProps>> = ({
     },
   };
 
-  const combinedClassName = `${classLoopUp[variant][color]} rounded-full transition px-6 py-2 transform active:scale-95 flex items-center gap-2 ${className}`;
+  const combinedClassName = `${classLoopUp[variant][color]} rounded-lg transition px-1.5 py-0.5 transform active:scale-95 flex items-center gap-2 ${className}`;
 
   return (
     <Element

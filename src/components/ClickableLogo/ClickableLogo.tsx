@@ -9,18 +9,18 @@ interface ClickableLogoProps {
   logo: {
     src: string;
   };
-  height?: 8 | 12;
+  height?: 2 | 3;
 }
 
 export const ClickableLogo: React.FC<ClickableLogoProps> = ({
   logo,
-  height = 8,
+  height = 2,
 }) => {
   const { isNext } = useDesignSystem();
 
   const heightClassLookup = {
-    8: "h-8",
-    12: "h-12",
+    2: "h-2",
+    3: "h-3",
   };
 
   const props = {

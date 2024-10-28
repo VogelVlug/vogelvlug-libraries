@@ -31,9 +31,9 @@ export const Navbar: React.FC<NavbarProps> = ({
   userMenu,
 }) => {
   return (
-    <div className="bg-default container mx-auto flex pt-4 pb-4 justify-between items-center">
+    <div className="bg-default container mx-auto flex pt-1 pb-1 justify-between items-center">
       <ClickableLogo logo={logo} />
-      <div className="flex gap-4">
+      <div className="flex gap-1">
         {routes.map((route) => (
           <Button variant="tertiary" color="main" href={route.path}>
             {route.title}
