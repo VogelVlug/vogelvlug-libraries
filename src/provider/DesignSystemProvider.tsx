@@ -7,7 +7,6 @@ import {
 } from "react";
 
 interface DesignSystemContextValue {
-  isNext: boolean;
   customLinkElement?: React.ElementType;
   customImageElement?: React.ElementType;
   logo: {
@@ -17,7 +16,6 @@ interface DesignSystemContextValue {
 
 const DesignSystemContext = createContext<DesignSystemContextValue>({
   logo: { src: "" },
-  isNext: false,
 });
 
 export const DesignSystemProvider: React.FC<
