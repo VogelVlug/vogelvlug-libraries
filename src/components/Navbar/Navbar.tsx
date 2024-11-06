@@ -5,9 +5,6 @@ import { Button } from "../Button/Button";
 import { ClickableLogo } from "../ClickableLogo/ClickableLogo";
 
 interface NavbarProps {
-  logo: {
-    src: string;
-  };
   routes: {
     path: string;
     title: string;
@@ -24,7 +21,6 @@ interface NavbarProps {
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
-  logo,
   routes,
   secondaryCta,
   primaryCta,
@@ -32,7 +28,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 }) => {
   return (
     <div className="bg-default container mx-auto flex pt-1 pb-1 justify-between items-center">
-      <ClickableLogo logo={logo} />
+      <ClickableLogo />
       <div className="flex gap-1">
         {routes.map((route) => (
           <Button variant="tertiary" color="main" href={route.path}>

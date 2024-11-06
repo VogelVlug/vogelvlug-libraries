@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { PropsWithChildren, ReactNode } from "react";
 import { useDesignSystem } from "../../provider/DesignSystemProvider";
+
 interface ButtonProps {
   variant?: "primary" | "secondary" | "tertiary";
   color?: "main" | "accent";

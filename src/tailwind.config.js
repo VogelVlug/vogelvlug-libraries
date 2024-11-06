@@ -1,11 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./src/**/*.{html,js,ts,jsx,tsx}",
-    "./templates/**/*.{html,js,ts,jsx,tsx}",
-    "./parts/**/*.{html,js,ts,jsx,tsx}",
-    "./node_modules/vogelvlug-design-system/**/*.{html,js,ts,jsx,tsx}",
-  ],
+  content: ["./src/**/*.{html,js,ts,jsx,tsx}"],
   theme: {
     screens: {
       sm: "392px",
