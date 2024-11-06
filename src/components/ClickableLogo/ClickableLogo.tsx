@@ -25,7 +25,7 @@ export const ClickableLogo: React.FC<ClickableLogoProps> = ({ height = 2 }) => {
 
   return (
     <LinkElement href="/">
-      <ImageElement src={logo.src} {...props} />
+      <ImageElement src={ImageElement === "img" ? logo.src : logo} {...props} />
     </LinkElement>
   );
 };
