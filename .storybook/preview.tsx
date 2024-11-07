@@ -1,7 +1,8 @@
 import type { Preview } from "@storybook/react";
 import React from "react";
 import { DesignSystemProvider } from "../src/provider/DesignSystemProvider";
-import "../src/tailwind.css";
+import "../tailwind.css";
+import "./custom-fonts.css";
 import logo from "./logo.png";
 
 const preview: Preview = {
@@ -15,7 +16,7 @@ const preview: Preview = {
   },
   decorators: [
     (Story) => (
-      <DesignSystemProvider isNext={false} logo={{ src: logo }}>
+      <DesignSystemProvider logo={{ src: logo }}>
         <Story />
       </DesignSystemProvider>
     ),

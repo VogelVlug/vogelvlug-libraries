@@ -1,27 +1,32 @@
 "use client";
 
+import { cn } from "@/lib/utils";
+import { cva, VariantProps } from "class-variance-authority";
 import React from "react";
 import { useDesignSystem } from "../../provider/DesignSystemProvider";
 
-interface ClickableLogoProps {
-  height?: 2 | 3;
-}
+const logoVariants = cva("w-auto", {
+  variants: {
+    height: {
+      sm: "h-6",
+      md: "h-8",
+      lg: "h-12",
+    },
+  },
+  defaultVariants: {
+    height: "md",
+  },
+});
 
-export const ClickableLogo: React.FC<ClickableLogoProps> = ({ height = 2 }) => {
-  const { logo, customImageElement, customLinkElement } = useDesignSystem();
-
-  const heightClassLookup = {
-    2: "h-2",
-    3: "h-3",
-  };
+export const ClickableLogo: React.FC<VariantProps<typeof logoVariants>> = ({
+  height,
+}) => {
+  const { logo, ImageElement, LinkElement } = useDesignSystem();
 
   const props = {
     alt: "Logo",
-    className: `${heightClassLookup[height]} w-auto`,
+    className: cn(logoVariants({ height })),
   };
-
-  const ImageElement = customImageElement || "img";
-  const LinkElement = customLinkElement || "a";
 
   return (
     <LinkElement href="/">

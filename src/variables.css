@@ -2,20 +2,20 @@
 :root {
   /* Mode 1 */
   /* number */
-  --button-padding-vertical: 0.5rem;
-  --button-icon-gap: 1rem;
-  --button-padding-horizontal: 1rem;
-  --button-border-radius: 2rem;
-  --column-base-gutter: 1.5rem;
-  --column-base-width: 5rem;
-  --column-multiple-2: 11.5rem;
-  --column-multiple-3: 18rem;
-  --column-multiple-4: 24.5rem;
-  --column-multiple-5: 31rem;
-  --column-multiple-6: 37.5rem;
-  --column-multiple-8: 50.5rem;
-  --column-multiple-10: 63.5rem;
-  --column-multiple-12: 76.5rem;
+  --button-border-radius: Infinityrem;
+  --button-icon-gap: Infinityrem;
+  --button-padding-horizontal: Infinityrem;
+  --button-padding-vertical: Infinityrem;
+  --column-base-gutter: Infinityrem;
+  --column-base-width: Infinityrem;
+  --column-multiple-10: Infinityrem;
+  --column-multiple-12: Infinityrem;
+  --column-multiple-2: Infinityrem;
+  --column-multiple-3: Infinityrem;
+  --column-multiple-4: Infinityrem;
+  --column-multiple-5: Infinityrem;
+  --column-multiple-6: Infinityrem;
+  --column-multiple-8: Infinityrem;
 }
 /* Brand Colors */
 :root {
@@ -75,6 +75,9 @@
   --fill-main: var(--main-300);
   --fill-main-hover: var(--main-400);
   --fill-main-onfill: var(--base-white);
+  --fill-warning: var(--warning-400);
+  --fill-warning-hover: var(--warning-500);
+  --fill-warning-onfill: var(--base-white);
   --surface-default: var(--base-white);
   --text-caption: var(--neutral-400);
   --text-color-accent: var(--accent-500);

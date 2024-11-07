@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: ["class"],
   content: ["./src/**/*.{html,js,ts,jsx,tsx}"],
   theme: {
     screens: {
@@ -7,36 +8,11 @@ module.exports = {
       md: "808px",
       lg: "1224px",
     },
-    spacing: {
-      0: "0",
-      0.25: "0.25rem",
-      0.5: "0.5rem",
-      1: "1rem",
-      1.5: "1.5rem",
-      2: "2rem",
-      3: "3rem",
-      4: "4rem",
-      5: "5rem",
-      6: "6rem",
-      7: "7rem",
-      8: "8rem",
-      9: "9rem",
-      10: "10rem",
-      column: "var(--column-base-width)",
-      "column-base-gutter": "var(--column-base-gutter)",
-      "column-2": "var(--column-multiple-2)",
-      "column-3": "var(--column-multiple-3)",
-      "column-4": "var(--column-multiple-4)",
-      "column-5": "var(--column-multiple-5)",
-      "column-6": "var(--column-multiple-6)",
-      "column-8": "var(--column-multiple-8)",
-      "column-10": "var(--column-multiple-10)",
-      "column-12": "var(--column-multiple-12)",
-    },
     borderRadius: {
       none: "0",
       sm: "0.25rem",
-      DEFAULT: "0.5rem", // TODO: Move to figma
+      md: "0.5rem",
+      DEFAULT: "0.5rem",
       lg: "1rem",
       full: "9999px",
     },
@@ -93,6 +69,13 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ["Poppins", "sans-serif"],
+      },
+      spacing: {
+        "col-width": "var(--column-base-width)",
+        "col-gutter": "var(--column-base-gutter)",
+      },
       textColor: {
         default: "var(--text-default)",
         title: "var(--text-title)",
@@ -113,13 +96,57 @@ module.exports = {
         "fill-main-hover": "var(--fill-main-hover)",
         "fill-accent": "var(--fill-accent)",
         "fill-accent-hover": "var(--fill-accent-hover)",
+        "fill-warning": "var(--fill-warning)",
+        "fill-warning-hover": "var(--fill-warning-hover)",
       },
       borderColor: {
         main: "var(--border-color-main)",
         accent: "var(--border-color-accent)",
         default: "var(--border-default)",
       },
+      colors: {
+        background: "var(--background-default)",
+        foreground: "var(--text-default)",
+        card: {
+          DEFAULT: "var(--surface-default)",
+          foreground: "var(--text-default)",
+        },
+        popover: {
+          DEFAULT: "var(--surface-default)",
+          foreground: "var(--text-default)",
+        },
+        primary: {
+          DEFAULT: "var(--fill-main)",
+          foreground: "var(--fill-main-onfill)",
+        },
+        secondary: {
+          DEFAULT: "var(--fill-accent)",
+          foreground: "var(--fill-accent-onfill)",
+        },
+        muted: {
+          DEFAULT: "var(--background-subtle)",
+          foreground: "var(--text-default)",
+        },
+        accent: {
+          DEFAULT: "var(--neutral-200)",
+          foreground: "var(--text-default)",
+        },
+        destructive: {
+          DEFAULT: "var(--fill-warning)",
+          foreground: "var(--fill-warning-onfill)",
+        },
+        border: "var(--border-default)",
+        input: "var(--border-default)",
+        ring: "var(--neutral-200)",
+        chart: {
+          1: "hsl(var(--chart-1))",
+          2: "hsl(var(--chart-2))",
+          3: "hsl(var(--chart-3))",
+          4: "hsl(var(--chart-4))",
+          5: "hsl(var(--chart-5))",
+        },
+      },
     },
   },
-  plugins: [],
+  plugins: [require("tailwindcss-animate")],
 };

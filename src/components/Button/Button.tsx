@@ -1,62 +1,54 @@
-"use client";
+import { Slot } from "@radix-ui/react-slot";
+import { cva, type VariantProps } from "class-variance-authority";
+import * as React from "react";
 
-import Link from "next/link";
-import { PropsWithChildren, ReactNode } from "react";
-import { useDesignSystem } from "../../provider/DesignSystemProvider";
+import { cn } from "@/lib/utils";
 
-interface ButtonProps {
-  variant?: "primary" | "secondary" | "tertiary";
-  color?: "main" | "accent";
-  startIcon?: ReactNode;
-  endIcon?: ReactNode;
-  href?: string;
-  onClick?: () => void;
-  className?: string;
+const buttonVariants = cva(
+  "inline-flex items-center justify-center whitespace-nowrap gap-2 rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 focus:ring-ring focus:ring-2 active:scale-95",
+  {
+    variants: {
+      variant: {
+        default:
+          "bg-primary text-primary-foreground hover:bg-primary/90 hover:bg-fill-main-hover",
+        destructive:
+          "bg-destructive text-destructive-foreground hover:bg-destructive/90 hover:bg-fill-warning-hover",
+        outline:
+          "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
+        secondary:
+          "bg-secondary text-secondary-foreground hover:bg-secondary/80 hover:bg-fill-accent-hover",
+        ghost: "hover:bg-accent hover:text-accent-foreground focus:ring-0",
+        link: "text-primary underline-offset-4 hover:underline focus:ring-0",
+      },
+      size: {
+        default: "h-10 px-4 py-2",
+        sm: "h-9 rounded-md px-3",
+        lg: "h-11 rounded-md px-8",
+        icon: "h-10 w-10",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+      size: "default",
+    },
+  },
+);
+
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    VariantProps<typeof buttonVariants> {
+  asChild?: boolean;
 }
 
-export const Button: React.FC<PropsWithChildren<ButtonProps>> = ({
-  children,
-  href,
-  onClick,
-  variant = "primary",
-  color = "main",
-  startIcon,
-  endIcon,
-  className,
-}) => {
-  const { isNext } = useDesignSystem();
-
-  const Element = href ? (isNext ? Link : "a") : "button";
-
-  const classLoopUp = {
-    primary: {
-      main: "bg-fill-main hover:bg-fill-main-hover text-fill-main-onfill ring-main-100 focus:ring-4",
-      accent:
-        "bg-fill-accent hover:bg-fill-accent-hover text-fill-accent-onfill ring-accent-100 focus:ring-4",
-    },
-    secondary: {
-      main: "border-main text-color-main border-2 hover:bg-main-100 ring-neutral-200 focus:ring-4",
-      accent:
-        "border-accent text-color-accent border-2 hover:bg-accent-100 ring-neutral-200 focus:ring-4",
-    },
-    tertiary: {
-      main: "bg-transparent hover:bg-neutral-200",
-      accent: "bg-transparent hover:bg-accent-100",
-    },
-  };
-
-  const combinedClassName = `${classLoopUp[variant][color]} rounded-lg transition px-1.5 py-0.5 transform active:scale-95 flex items-center gap-2 ${className}`;
-
-  return (
-    <Element
-      // @ts-expect-error If it is a Next.js Link, there will be a href
-      href={href}
-      onClick={onClick}
-      className={combinedClassName}
-    >
-      {startIcon}
-      {children}
-      {endIcon}
-    </Element>
-  );
-};
+export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ className, variant, size, asChild = false, ...props }, ref) => {
+    const Comp = asChild ? Slot : "button";
+    return (
+      <Comp
+        className={cn(buttonVariants({ variant, size, className }))}
+        ref={ref}
+        {...props}
+      />
+    );
+  },
+);

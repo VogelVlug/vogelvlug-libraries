@@ -1,14 +1,11 @@
 "use client";
 
-import {
-  createContext,
-  PropsWithChildren,
-  useContext,
-} from "react";
+import { Optional } from "@wursteintopf/typescript-utils";
+import { createContext, PropsWithChildren, useContext } from "react";
 
 interface DesignSystemContextValue {
-  customLinkElement?: React.ElementType;
-  customImageElement?: React.ElementType;
+  LinkElement: React.ElementType;
+  ImageElement: React.ElementType;
   logo: {
     src: string;
   };
@@ -16,13 +13,28 @@ interface DesignSystemContextValue {
 
 const DesignSystemContext = createContext<DesignSystemContextValue>({
   logo: { src: "" },
+  ImageElement: "img",
+  LinkElement: "a",
 });
 
 export const DesignSystemProvider: React.FC<
-  PropsWithChildren<DesignSystemContextValue>
-> = ({ children, ...props }) => {
+  PropsWithChildren<
+    Optional<DesignSystemContextValue, "ImageElement" | "LinkElement">
+  >
+> = ({
+  children,
+  logo,
+  ImageElement = "img",
+  LinkElement = "a",
+}) => {
   return (
-    <DesignSystemContext.Provider value={props}>
+    <DesignSystemContext.Provider
+      value={{
+        logo,
+        ImageElement,
+        LinkElement,
+      }}
+    >
       {children}
     </DesignSystemContext.Provider>
   );
