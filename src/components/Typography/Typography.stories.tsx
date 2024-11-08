@@ -21,6 +21,23 @@ export const Body: Story = {
   },
 };
 
+export const BodyCentered: Story = {
+  args: {
+    variant: 'body',
+    text: 'This is a longer body text that demonstrates center alignment. It contains multiple sentences to show how the text wraps across multiple lines while maintaining the center alignment.',
+    align: 'center'
+  },
+};
+
+export const BodyRight: Story = {
+  args: {
+    variant: 'body', 
+    text: 'This is a longer body text that demonstrates right alignment. It contains multiple sentences to show how the text wraps across multiple lines while maintaining the right alignment.',
+    align: 'right'
+  },
+};
+
+
 export const Heading1: Story = {
   args: {
     variant: 'h1',

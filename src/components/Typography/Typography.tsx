@@ -3,7 +3,7 @@
 import { cva, type VariantProps } from "class-variance-authority";
 import { ElementType } from "react";
 
-const typographyVariants = cva("", {
+const typographyVariants = cva("inline-block", {
   variants: {
     variant: {
       body: "text-base font-normal",
