@@ -2,6 +2,7 @@
 
 import { cva, type VariantProps } from "class-variance-authority";
 import { ElementType } from "react";
+import { cn } from "../../lib/utils";
 
 const typographyVariants = cva("inline-block", {
   variants: {
@@ -34,6 +35,7 @@ type TypographyProps = VariantProps<typeof typographyVariants> & {
   element?: ElementType;
   text: string;
   highlightWords?: number[];
+  className?: string;
 };
 
 export const Typography: React.FC<TypographyProps> = ({
@@ -42,11 +44,12 @@ export const Typography: React.FC<TypographyProps> = ({
   align,
   text,
   highlightWords = [],
+  className,
 }) => {
   const Element = element;
 
   return (
-    <Element className={typographyVariants({ variant, align })}>
+    <Element className={cn(typographyVariants({ variant, align }), className)}>
       {text.split(" ").map((word, index) => {
         if (highlightWords.includes(index)) {
           return (
