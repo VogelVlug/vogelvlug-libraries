@@ -51,7 +51,7 @@ const sheetVariants = cva(
 
 interface SheetContentProps
   extends SheetPrimitive.DialogContentProps,
-    VariantProps<typeof sheetVariants> {
+  VariantProps<typeof sheetVariants> {
   className?: string;
   children: React.ReactNode;
 }
@@ -142,5 +142,6 @@ export {
   SheetOverlay,
   SheetPortal,
   SheetTitle,
-  SheetTrigger,
+  SheetTrigger
 };
+

@@ -72,6 +72,13 @@ module.exports = {
       fontFamily: {
         sans: ["Poppins", "sans-serif"],
       },
+      fontSize: {
+        lg: "1.25rem",
+        xl: "1.5rem",
+        "2xl": "2rem",
+        "3xl": "2.5rem",
+        "4xl": "3rem",
+      },
       spacing: {
         "col-width": "var(--column-base-width)",
         "col-gutter": "var(--column-base-gutter)",
