@@ -1,7 +1,9 @@
-import * as React from "react"
-import * as SeparatorPrimitive from "@radix-ui/react-separator"
+"use client";
 
-import { cn } from "../../lib/utils"
+import * as SeparatorPrimitive from "@radix-ui/react-separator";
+import * as React from "react";
+
+import { cn } from "../../lib/utils";
 
 const Divider = React.forwardRef<
   React.ElementRef<typeof SeparatorPrimitive.Root>,
@@ -25,4 +27,5 @@ const Divider = React.forwardRef<
   )
 )
 
-export { Divider }
+export { Divider };
+
