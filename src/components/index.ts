@@ -4,5 +4,6 @@ export * from "./Collapsible/Collapsible";
 export * from "./NavMenu/NavMenu";
 export * from "./Select/Select";
 export * from "./Sheet/Sheet";
-export * from "./Typography/Typography";
+export * from "./Skeleton/Skeleton";
 export * from "./Switch/Switch";
+export * from "./Typography/Typography";
