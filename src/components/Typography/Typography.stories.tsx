@@ -24,8 +24,9 @@ export const Body: Story = {
 export const Heading1: Story = {
   args: {
     variant: 'h1',
-    text: 'This is a heading 1',
-    element: 'h1'
+    text: 'This is a heading 1 with a very long text to see the wrapping',
+    element: 'h1',
+    align: 'center'
   },
 };
 
@@ -33,7 +34,7 @@ export const Heading2: Story = {
   args: {
     variant: 'h2', 
     text: 'This is a heading 2',
-    element: 'h2'
+    element: 'h2',
   },
 };
 
