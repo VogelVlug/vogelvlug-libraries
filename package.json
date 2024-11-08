@@ -1,6 +1,6 @@
 {
   "name": "@wursteintopf/vogelvlug-design-system",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
@@ -17,6 +17,7 @@
   "license": "UNLICENSED",
   "packageManager": "yarn@4.5.1",
   "dependencies": {
+    "@radix-ui/react-collapsible": "^1.1.1",
     "@radix-ui/react-dialog": "^1.1.2",
     "@radix-ui/react-navigation-menu": "^1.2.1",
     "@radix-ui/react-select": "^2.1.2",

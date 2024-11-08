@@ -94,11 +94,11 @@ export const NavSubMenuItem: React.FC<SubRoute> = ({
   const { LinkElement } = useDesignSystem();
 
   return (
-    <li className="w-[200px]">
+    <li className="w-[224px]">
       <NavMenuPrimitive.Link asChild>
-        <LinkElement href={href} className="flex flex-col gap-2">
+        <LinkElement href={href} className="flex flex-col gap-1">
           <span className="text-sm font-semibold">{title}</span>
-          <span className="text-sm text-subtitle">{description}</span>
+          <span className="text-xs text-subtitle">{description}</span>
         </LinkElement>
       </NavMenuPrimitive.Link>
     </li>
