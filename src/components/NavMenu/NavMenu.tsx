@@ -1,6 +1,6 @@
 "use client";
 
-import { useDesignSystem } from "@/provider/DesignSystemProvider";
+import { useDesignSystem } from "../../provider/DesignSystemProvider";
 import * as NavMenuPrimitive from "@radix-ui/react-navigation-menu";
 import { ChevronDown } from "lucide-react";
 import { PropsWithChildren } from "react";
