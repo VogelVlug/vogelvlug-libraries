@@ -1,5 +1,6 @@
 import * as NavMenuPrimitive from "@radix-ui/react-navigation-menu";
 import { ChevronDown } from "lucide-react";
+import { PropsWithChildren } from "react";
 
 interface SubRoute {
   href: string;
@@ -17,13 +18,11 @@ interface NavMenuProps {
   routes: Route[];
 }
 
-export const NavMenu: React.FC<NavMenuProps> = ({ routes }) => {
+export const NavMenu: React.FC<PropsWithChildren> = ({ children }) => {
   return (
     <NavMenuPrimitive.Root className="relative z-10 list-none">
       <NavMenuPrimitive.List className="flex max-w-max flex-1 list-none items-center justify-center gap-6 text-sm">
-        {routes.map((route) => (
-          <NavMenuItem key={route.href} {...route} />
-        ))}
+        {children}
       </NavMenuPrimitive.List>
 
       <div className="absolute top-full flex justify-center">
@@ -33,8 +32,13 @@ export const NavMenu: React.FC<NavMenuProps> = ({ routes }) => {
   );
 };
 
-const NavMenuItem: React.FC<Route> = ({ href, title, subRoutes }) => {
-  if (!subRoutes) {
+interface NavMenuItemProps extends PropsWithChildren {
+  href?: string;
+  title: string;
+}
+
+export const NavMenuItem: React.FC<NavMenuItemProps> = ({ href, title, children }) => {
+  if (!children) {
     return (
       <NavMenuPrimitive.Item>
         <NavMenuLink href={href} title={title} />
@@ -49,9 +53,7 @@ const NavMenuItem: React.FC<Route> = ({ href, title, subRoutes }) => {
       </NavMenuPrimitive.Trigger>
       <NavMenuPrimitive.Content className="left-0 top-0 w-full data-[motion^=from-]:animate-in data-[motion^=to-]:animate-out data-[motion^=from-]:fade-in data-[motion^=to-]:fade-out data-[motion=from-end]:slide-in-from-right-52 data-[motion=from-start]:slide-in-from-left-52 data-[motion=to-end]:slide-out-to-right-52 data-[motion=to-start]:slide-out-to-left-52 md:absolute md:w-auto">
         <NavMenuPrimitive.Sub className="flex flex-col gap-4 p-4">
-          {subRoutes.map((subRoute) => (
-            <NavSubMenuLink key={subRoute.href} {...subRoute} />
-          ))}
+          {children}
         </NavMenuPrimitive.Sub>
       </NavMenuPrimitive.Content>
     </NavMenuPrimitive.Item>
@@ -59,7 +61,7 @@ const NavMenuItem: React.FC<Route> = ({ href, title, subRoutes }) => {
 };
 
 interface NavMenuLinkProps {
-  href: string;
+  href?: string;
   title: string;
 }
 
@@ -73,7 +75,7 @@ const NavMenuLink: React.FC<NavMenuLinkProps> = ({ href, title }) => {
   );
 };
 
-const NavSubMenuLink: React.FC<SubRoute> = ({ href, title, description }) => {
+export const NavSubMenuItem: React.FC<SubRoute> = ({ href, title, description }) => {
   return (
     <li className="w-[200px]">
       <NavMenuPrimitive.Link asChild>
