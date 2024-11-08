@@ -1,5 +1,6 @@
 "use client";
 
+import { useDesignSystem } from "@/provider/DesignSystemProvider";
 import * as NavMenuPrimitive from "@radix-ui/react-navigation-menu";
 import { ChevronDown } from "lucide-react";
 import { PropsWithChildren } from "react";
@@ -39,7 +40,11 @@ interface NavMenuItemProps extends PropsWithChildren {
   title: string;
 }
 
-export const NavMenuItem: React.FC<NavMenuItemProps> = ({ href, title, children }) => {
+export const NavMenuItem: React.FC<NavMenuItemProps> = ({
+  href,
+  title,
+  children,
+}) => {
   if (!children) {
     return (
       <NavMenuPrimitive.Item>
@@ -68,23 +73,31 @@ interface NavMenuLinkProps {
 }
 
 const NavMenuLink: React.FC<NavMenuLinkProps> = ({ href, title }) => {
+  const { LinkElement } = useDesignSystem();
+
   return (
     <NavMenuPrimitive.Link asChild>
-      <a className="text-sm font-semibold" href={href}>
+      <LinkElement className="text-sm font-semibold" href={href}>
         {title}
-      </a>
+      </LinkElement>
     </NavMenuPrimitive.Link>
   );
 };
 
-export const NavSubMenuItem: React.FC<SubRoute> = ({ href, title, description }) => {
+export const NavSubMenuItem: React.FC<SubRoute> = ({
+  href,
+  title,
+  description,
+}) => {
+  const { LinkElement } = useDesignSystem();
+
   return (
     <li className="w-[200px]">
       <NavMenuPrimitive.Link asChild>
-        <a href={href} className="flex flex-col gap-2">
+        <LinkElement href={href} className="flex flex-col gap-2">
           <span className="text-sm font-semibold">{title}</span>
           <span className="text-sm text-subtitle">{description}</span>
-        </a>
+        </LinkElement>
       </NavMenuPrimitive.Link>
     </li>
   );
