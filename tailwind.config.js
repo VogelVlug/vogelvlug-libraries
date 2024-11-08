@@ -108,7 +108,7 @@ module.exports = {
       },
       borderColor: {
         main: "var(--border-color-main)",
-        accent: "var(--border-color-accent)",
+        accent: "var(--fill-accent)",
         default: "var(--border-default)",
       },
       colors: {
