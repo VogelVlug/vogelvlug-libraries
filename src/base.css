@@ -3,3 +3,7 @@
 body {
   @apply bg-default text-default;
 }
+
+* {
+  @apply border-default;
+}
