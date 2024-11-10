@@ -1,4 +1,5 @@
 export * from "./Button/Button";
+export * from "./Checkbox/Checkbox";
 export * from "./ClickableLogo/ClickableLogo";
 export * from "./Collapsible/Collapsible";
 export * from "./Divider/Divider";
