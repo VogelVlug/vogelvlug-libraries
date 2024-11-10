@@ -1,6 +1,6 @@
 {
   "name": "@wursteintopf/vogelvlug-design-system",
-  "version": "1.0.29",
+  "version": "1.0.30",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
@@ -44,7 +44,6 @@
   "devDependencies": {
     "@storybook/addon-essentials": "^8.4.2",
     "@storybook/addon-interactions": "^8.4.2",
-    "@storybook/addon-onboarding": "^8.4.2",
     "@storybook/blocks": "^8.4.2",
     "@storybook/react": "^8.4.2",
     "@storybook/react-vite": "^8.4.2",

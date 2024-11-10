@@ -12,4 +12,5 @@ export * from "./Select/Select";
 export * from "./Sheet/Sheet";
 export * from "./Skeleton/Skeleton";
 export * from "./Switch/Switch";
+export * from "./Table/Table";
 export * from "./Typography/Typography";
