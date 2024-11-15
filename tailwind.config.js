@@ -3,10 +3,15 @@ module.exports = {
   darkMode: ["class"],
   content: ["./src/**/*.{html,js,ts,jsx,tsx}"],
   theme: {
+    container: {
+      center: true,
+      padding: "2rem",
+    },
     screens: {
-      sm: "392px",
-      md: "808px",
-      lg: "1224px",
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
     },
     borderRadius: {
       none: "0",
