@@ -8,11 +8,11 @@ const typographyVariants = cva("inline-block", {
   variants: {
     variant: {
       body: "text-base font-normal",
-      h1: "text-4xl leading-tight font-bold text-title",
-      h2: "text-3xl leading-tight font-bold text-title",
-      h3: "text-2xl leading-tight font-bold text-title",
-      h4: "text-xl leading-tight font-bold text-title",
-      h5: "text-lg leading-tight font-bold text-title",
+      h1: "text-4xl sm:text-3xl leading-tight font-bold text-title",
+      h2: "text-3xl sm:text-2xl leading-tight font-bold text-title",
+      h3: "text-2xl sm:text-xl leading-tight font-bold text-title",
+      h4: "text-xl sm:text-lg leading-tight font-bold text-title",
+      h5: "text-lg sm:text-base leading-tight font-bold text-title",
       h6: "text-base leading-tight font-bold text-title",
       subtitle: "font-medium text-subtitle",
       overtitle: "text-base font-medium uppercase tracking-wider text-overtitle",
