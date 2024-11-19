@@ -23,7 +23,7 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "declaration": true,
-    "skipLibCheck": true,
+    "skipLibCheck": true
   },
   "include": ["src", "tailwind.config.js"],
   "exclude": ["__test__", "__tests__", "__mock__", "__mocks__"]

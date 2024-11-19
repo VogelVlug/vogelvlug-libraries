@@ -32,7 +32,7 @@ export const Success: Story = {
 
 export const Warning: Story = {
   args: {
-    variant: "warning", 
+    variant: "warning",
     title: "Warning Alert",
     children: "Please review this important warning",
   },
@@ -41,7 +41,7 @@ export const Warning: Story = {
 export const Error: Story = {
   args: {
     variant: "error",
-    title: "Error Alert", 
+    title: "Error Alert",
     children: "An error occurred while processing your request",
   },
 };

@@ -1,7 +1,12 @@
 import { VariantProps, cva } from "class-variance-authority";
 import { AlertCircle, CheckCircle, Info, XCircle } from "lucide-react";
-import React from "react";
+import { PropsWithChildren } from "react";
 import { cn } from "../../lib/utils";
+
+interface AlertProps extends VariantProps<typeof alertVariants> {
+  title?: string;
+  className?: string;
+}
 
 const alertVariants = cva("w-full rounded-sm p-4 text-sm flex gap-4", {
   variants: {
@@ -26,33 +31,26 @@ const iconMap = {
   error: XCircle,
 };
 
-interface AlertProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof alertVariants> {
-  title?: string;
-}
+export const Alert: React.FC<PropsWithChildren<AlertProps>> = ({
+  className,
+  variant = "default",
+  title,
+  children,
+  ...props
+}) => {
+  const Icon = iconMap[variant || "default"];
 
-const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
-  ({ className, variant = "default", title, children, ...props }, ref) => {
-    const Icon = iconMap[variant || "default"];
-
-    return (
-      <div
-        ref={ref}
-        role="alert"
-        className={cn(alertVariants({ variant }), className)}
-        {...props}
-      >
-        <Icon className="h-5 w-5" />
-        <div className="flex flex-col gap-1">
-          {title && <h5 className="font-bold leading-none">{title}</h5>}
-          {children}
-        </div>
+  return (
+    <div
+      role="alert"
+      className={cn(alertVariants({ variant }), className)}
+      {...props}
+    >
+      <Icon className="h-5 w-5" />
+      <div className="flex flex-col gap-1">
+        {title && <h5 className="font-bold leading-none">{title}</h5>}
+        {children}
       </div>
-    );
-  },
-);
-
-Alert.displayName = "Alert";
-
-export { Alert, alertVariants };
+    </div>
+  );
+};
