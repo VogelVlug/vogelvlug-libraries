@@ -1,9 +1,9 @@
 "use client";
 
 import * as React from "react";
-import { useDesignSystem } from "src/provider/DesignSystemProvider";
 import { cn } from "../../lib/utils";
 import { Typography } from "../Typography/Typography";
+import { useDesignSystem } from "../../provider/DesignSystemProvider";
 
 interface TestimonialProps {
   imageSrc: string;
