@@ -1,6 +1,6 @@
 {
   "name": "@wursteintopf/vogelvlug-design-system",
-  "version": "1.0.52",
+  "version": "1.0.53",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },

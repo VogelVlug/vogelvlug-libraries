@@ -9,6 +9,7 @@ export * from "./Form/Form";
 export * from "./Input/Input";
 export * from "./Label/Label";
 export * from "./NavMenu/NavMenu";
+export * from "./PriceView/PriceView";
 export * from "./Select/Select";
 export * from "./Sheet/Sheet";
 export * from "./Skeleton/Skeleton";
