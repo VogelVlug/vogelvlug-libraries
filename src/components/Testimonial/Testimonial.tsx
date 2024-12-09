@@ -22,7 +22,7 @@ export const Testimonial: React.FC<TestimonialProps> = ({
   text,
   className,
 }) => {
-  const { LinkElement } = useDesignSystem();
+  const { LinkElement, ImageElement } = useDesignSystem();
 
   return (
     <div
@@ -33,7 +33,7 @@ export const Testimonial: React.FC<TestimonialProps> = ({
     >
       <div className="flex gap-4">
         <div className="relative h-12 w-12 overflow-hidden rounded-full">
-          <img
+          <ImageElement
             src={imageSrc}
             alt={`${name}'s testimonial`}
             className="h-full w-full object-cover"
