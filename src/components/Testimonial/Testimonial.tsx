@@ -2,8 +2,8 @@
 
 import * as React from "react";
 import { cn } from "../../lib/utils";
-import { Typography } from "../Typography/Typography";
 import { useDesignSystem } from "../../provider/DesignSystemProvider";
+import { Typography } from "../Typography/Typography";
 
 interface TestimonialProps {
   imageSrc: string;
@@ -35,6 +35,8 @@ export const Testimonial: React.FC<TestimonialProps> = ({
         <div className="relative h-12 w-12 overflow-hidden rounded-full">
           <ImageElement
             src={imageSrc}
+            width={48}
+            height={48}
             alt={`${name}'s testimonial`}
             className="h-full w-full object-cover"
           />
