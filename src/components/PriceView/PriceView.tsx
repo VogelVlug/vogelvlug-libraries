@@ -1,10 +1,12 @@
-import { Typography } from "../Typography/Typography";
+import { Typography, TypographyVariant } from "../Typography/Typography";
 
 interface PriveViewProps {
   price: number;
   discount?: number;
   tax?: number;
   currencyCode?: string;
+  variant?: TypographyVariant;
+  originalPriceVariant?: TypographyVariant;
 }
 
 export const PriceView: React.FC<PriveViewProps> = ({
@@ -12,6 +14,8 @@ export const PriceView: React.FC<PriveViewProps> = ({
   discount: nullableDiscount,
   tax: nullableTax,
   currencyCode,
+  variant = "h2",
+  originalPriceVariant = "h4",
 }) => {
   const discount = nullableDiscount ?? 0;
   const tax = nullableTax ?? 0;
@@ -29,12 +33,12 @@ export const PriceView: React.FC<PriveViewProps> = ({
     <div className="flex items-center gap-2">
       {discount > 0 && (
         <Typography
-          variant="h4"
+          variant={originalPriceVariant}
           className="text-subtitle line-through"
           text={formatAmount(price + discount + tax)}
         />
       )}
-      <Typography variant="h2" text={formatAmount(price)} />
+      <Typography variant={variant} text={formatAmount(price)} />
     </div>
   );
 };

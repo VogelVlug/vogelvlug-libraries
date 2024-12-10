@@ -35,3 +35,12 @@ export const PriceViewUSD: Story = {
   },
 };
 
+export const PriceViewSmall: Story = {
+  args: {
+    price: 100,
+    variant: "h4",
+    originalPriceVariant: "h6",
+    discount: 20,
+    currencyCode: "EUR",
+  },
+};
