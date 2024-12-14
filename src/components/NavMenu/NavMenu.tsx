@@ -11,16 +11,6 @@ interface SubRoute {
   description: string;
 }
 
-interface Route {
-  href: string;
-  title: string;
-  subRoutes?: SubRoute[];
-}
-
-interface NavMenuProps {
-  routes: Route[];
-}
-
 export const NavMenu: React.FC<PropsWithChildren> = ({ children }) => {
   return (
     <NavMenuPrimitive.Root className="relative z-10 list-none">
