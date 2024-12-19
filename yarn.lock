@@ -1601,9 +1601,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wursteintopf/vogelvlug-design-system@workspace:.":
+"@vogelvlug/vogelvlug-design-system@workspace:.":
   version: 0.0.0-use.local
-  resolution: "@wursteintopf/vogelvlug-design-system@workspace:."
+  resolution: "@vogelvlug/vogelvlug-design-system@workspace:."
   dependencies:
     "@storybook/addon-essentials": "npm:^8.4.2"
     "@storybook/addon-interactions": "npm:^8.4.2"
@@ -1641,11 +1641,13 @@ __metadata:
     class-variance-authority: ^0.7.0
     clsx: ^2.1.1
     lucide-react: ^0.454.0
-    react: ^18.0.0
-    react-dom: ^18.0.0
+    react: ^18.3.1
+    react-dom: ^18.3.1
     react-hook-form: ^7.53.2
     tailwind-merge: ^2.5.4
     tailwindcss-animate: ^1.0.7
+    typescript: ^5.6.3
+    vite-tsconfig-paths: ^5.1.0
     zod: ^3.23.8
   languageName: unknown
   linkType: soft

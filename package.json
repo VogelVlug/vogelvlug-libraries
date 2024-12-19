@@ -1,6 +1,6 @@
 {
-  "name": "@wursteintopf/vogelvlug-design-system",
-  "version": "1.0.64",
+  "name": "@vogelvlug/vogelvlug-design-system",
+  "version": "1.0.72",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Wursteintopf/vogelvlug-design-system.git"
+    "url": "git+https://github.com/VogelVlug/vogelvlug-design-system.git"
   },
   "author": "Markus <markus@vogelvlug.de>",
   "license": "UNLICENSED",
