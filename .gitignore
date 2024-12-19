@@ -5,3 +5,4 @@ build
 .pnp.cjs
 .pnp.loader.mjs
 *storybook.log
+tsconfig-build.tsbuildinfo

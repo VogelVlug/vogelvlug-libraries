@@ -1,6 +1,6 @@
 "use client";
 
-import { Optional } from "@wursteintopf/typescript-utils";
+import { Optional } from "@vogelvlug/typescript-utils";
 import { createContext, PropsWithChildren, useContext } from "react";
 
 interface DesignSystemContextValue {
