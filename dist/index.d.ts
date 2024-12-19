@@ -1,5 +1,5 @@
 import * as CheckboxPrimitive from '@radix-ui/react-checkbox';
-import { ClassProp } from 'class-variance-authority/types';
+import { ClassProp } from 'class-variance-authority/dist/types';
 import * as CollapsiblePrimitive from '@radix-ui/react-collapsible';
 import { ControllerProps } from 'react-hook-form';
 import { default as default_2 } from 'react';

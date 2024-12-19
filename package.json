@@ -1,15 +1,19 @@
 {
   "name": "@vogelvlug/vogelvlug-design-system",
-  "version": "1.0.74",
+  "version": "1.1.0",
   "type": "module",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
-      "default": "./dist/index.js"
+      "require": "./dist/index.cjs",
+      "default": "./dist/index.cjs"
     },
     "./tailwind-config": "./tailwind.config.js",
     "./base.css": "./src/base.css"
@@ -26,9 +30,9 @@
     "build": "rm -rf dist && tsc --p ./tsconfig-build.json && vite build",
     "build:storybook": "storybook build",
     "publish": "yarn npm publish --access restricted",
-    "release:patch": "yarn version patch && yarn publish",
-    "release:minor": "yarn version minor && yarn publish",
-    "release:major": "yarn version major && yarn publish"
+    "release:patch": "yarn version patch && yarn build && yarn publish",
+    "release:minor": "yarn version minor && yarn build && yarn publish",
+    "release:major": "yarn version major && yarn build && yarn publish"
   },
   "peerDependencies": {
     "react": "^18.3.1",
