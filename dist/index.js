@@ -6869,7 +6869,7 @@ const kp = He(
   {}
 ), Dp = c.forwardRef(({ className: e, ...t }, n) => {
   const o = c.useId();
-  return /* @__PURE__ */ d(Ii.Provider, { value: { id: o }, children: /* @__PURE__ */ d("div", { ref: n, className: k("space-y-2", e), ...t }) });
+  return /* @__PURE__ */ d(Ii.Provider, { value: { id: o }, children: /* @__PURE__ */ d("div", { ref: n, className: k("space-y-1", e), ...t }) });
 });
 Dp.displayName = "FormItem";
 const Lp = c.forwardRef(({ className: e, ...t }, n) => {
@@ -6927,18 +6927,22 @@ const Vp = c.forwardRef(({ className: e, children: t, ...n }, o) => {
 });
 Vp.displayName = "FormMessage";
 const sg = c.forwardRef(
-  ({ className: e, type: t, ...n }, o) => /* @__PURE__ */ d(
-    "input",
-    {
-      type: t,
-      className: k(
-        "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground placeholder:opacity-60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm",
-        e
-      ),
-      ref: o,
-      ...n
-    }
-  )
+  ({ className: e, type: t, prefix: n, suffix: o, ...r }, s) => /* @__PURE__ */ z("div", { className: "relative flex w-full items-center rounded-md border border-input bg-background focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2 focus-within:ring-offset-background dark:focus-within:ring-neutral-600", children: [
+    n && /* @__PURE__ */ d("div", { className: "pointer-events-none flex h-10 items-center pl-3 text-subtitle", children: n }),
+    /* @__PURE__ */ d(
+      "input",
+      {
+        type: t,
+        className: k(
+          "h-10 w-full bg-transparent px-3 py-2 text-base placeholder:text-muted-foreground placeholder:opacity-60 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm",
+          e
+        ),
+        ref: s,
+        ...r
+      }
+    ),
+    o && /* @__PURE__ */ d("div", { className: "pointer-events-none flex h-10 items-center pr-3 text-subtitle", children: o })
+  ] })
 );
 var Bp = "VisuallyHidden", Mo = c.forwardRef(
   (e, t) => /* @__PURE__ */ d(
