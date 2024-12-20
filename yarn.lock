@@ -978,7 +978,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@radix-ui/react-dialog@npm:^1.1.2":
+"@radix-ui/react-dialog@npm:^1.1.4":
   version: 1.1.4
   resolution: "@radix-ui/react-dialog@npm:1.1.4"
   dependencies:
@@ -2555,7 +2555,7 @@ __metadata:
     "@hookform/resolvers": "npm:^3.9.1"
     "@radix-ui/react-checkbox": "npm:^1.1.2"
     "@radix-ui/react-collapsible": "npm:^1.1.1"
-    "@radix-ui/react-dialog": "npm:^1.1.2"
+    "@radix-ui/react-dialog": "npm:^1.1.4"
     "@radix-ui/react-dropdown-menu": "npm:^2.1.2"
     "@radix-ui/react-label": "npm:^2.1.0"
     "@radix-ui/react-navigation-menu": "npm:^1.2.1"

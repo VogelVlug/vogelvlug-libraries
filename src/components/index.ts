@@ -3,6 +3,7 @@ export * from "./Button/Button";
 export * from "./Checkbox/Checkbox";
 export * from "./ClickableLogo/ClickableLogo";
 export * from "./Collapsible/Collapsible";
+export * from "./Dialog/Dialog";
 export * from "./Divider/Divider";
 export * from "./DropdownMenu/DropdownMenu";
 export * from "./Form/Form";

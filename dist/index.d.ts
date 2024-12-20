@@ -3,6 +3,7 @@ import { ClassProp } from 'class-variance-authority/dist/types';
 import * as CollapsiblePrimitive from '@radix-ui/react-collapsible';
 import { ControllerProps } from 'react-hook-form';
 import { default as default_2 } from 'react';
+import * as DialogPrimitive from '@radix-ui/react-dialog';
 import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu';
 import { ElementType } from 'react';
 import { FieldError } from 'react-hook-form';
@@ -19,7 +20,6 @@ import * as React_2 from 'react';
 import { RefAttributes } from 'react';
 import * as SelectPrimitive from '@radix-ui/react-select';
 import * as SeparatorPrimitive from '@radix-ui/react-separator';
-import * as SheetPrimitive from '@radix-ui/react-dialog';
 import { SlotProps } from '@radix-ui/react-slot';
 import * as SwitchPrimitives from '@radix-ui/react-switch';
 import { VariantProps } from 'class-variance-authority';
@@ -69,6 +69,34 @@ declare interface DesignSystemContextValue {
 }
 
 export declare const DesignSystemProvider: React.FC<PropsWithChildren<Optional<DesignSystemContextValue, "ImageElement" | "LinkElement" | "colorMode" | "setColorMode">>>;
+
+export declare const Dialog: React_2.FC<DialogPrimitive.DialogProps>;
+
+export declare const DialogClose: React_2.ForwardRefExoticComponent<DialogPrimitive.DialogCloseProps & React_2.RefAttributes<HTMLButtonElement>>;
+
+export declare const DialogContent: React_2.ForwardRefExoticComponent<Omit<DialogPrimitive.DialogContentProps & React_2.RefAttributes<HTMLDivElement>, "ref"> & {
+    hideCloseButton?: boolean;
+} & React_2.RefAttributes<HTMLDivElement>>;
+
+export declare const DialogDescription: React_2.ForwardRefExoticComponent<Omit<DialogPrimitive.DialogDescriptionProps & React_2.RefAttributes<HTMLParagraphElement>, "ref"> & React_2.RefAttributes<HTMLParagraphElement>>;
+
+export declare const DialogFooter: {
+    ({ className, ...props }: React_2.HTMLAttributes<HTMLDivElement>): JSX_2.Element;
+    displayName: string;
+};
+
+export declare const DialogHeader: {
+    ({ className, ...props }: React_2.HTMLAttributes<HTMLDivElement>): JSX_2.Element;
+    displayName: string;
+};
+
+export declare const DialogOverlay: React_2.ForwardRefExoticComponent<Omit<DialogPrimitive.DialogOverlayProps & React_2.RefAttributes<HTMLDivElement>, "ref"> & React_2.RefAttributes<HTMLDivElement>>;
+
+export declare const DialogPortal: React_2.FC<DialogPrimitive.DialogPortalProps>;
+
+export declare const DialogTitle: React_2.ForwardRefExoticComponent<Omit<DialogPrimitive.DialogTitleProps & React_2.RefAttributes<HTMLHeadingElement>, "ref"> & React_2.RefAttributes<HTMLHeadingElement>>;
+
+export declare const DialogTrigger: React_2.ForwardRefExoticComponent<DialogPrimitive.DialogTriggerProps & React_2.RefAttributes<HTMLButtonElement>>;
 
 export declare const Divider: React_2.ForwardRefExoticComponent<Omit<SeparatorPrimitive.SeparatorProps & React_2.RefAttributes<HTMLDivElement>, "ref"> & React_2.RefAttributes<HTMLDivElement>>;
 
@@ -235,20 +263,20 @@ declare interface SelectTriggerProps extends SelectPrimitive.SelectTriggerProps 
 
 export declare const SelectValue: React_2.ForwardRefExoticComponent<SelectPrimitive.SelectValueProps & React_2.RefAttributes<HTMLSpanElement>>;
 
-export declare const Sheet: React_2.FC<SheetPrimitive.DialogProps>;
+export declare const Sheet: React_2.FC<DialogPrimitive.DialogProps>;
 
-export declare const SheetClose: React_2.ForwardRefExoticComponent<SheetPrimitive.DialogCloseProps & React_2.RefAttributes<HTMLButtonElement>>;
+export declare const SheetClose: React_2.ForwardRefExoticComponent<DialogPrimitive.DialogCloseProps & React_2.RefAttributes<HTMLButtonElement>>;
 
 export declare const SheetContent: React_2.FC<SheetContentProps>;
 
-declare interface SheetContentProps extends SheetPrimitive.DialogContentProps, VariantProps<typeof sheetVariants> {
+declare interface SheetContentProps extends DialogPrimitive.DialogContentProps, VariantProps<typeof sheetVariants> {
     className?: string;
     children: React_2.ReactNode;
 }
 
 export declare const SheetDescription: React_2.FC<SheetDescriptionProps>;
 
-declare interface SheetDescriptionProps extends SheetPrimitive.DialogDescriptionProps {
+declare interface SheetDescriptionProps extends DialogPrimitive.DialogDescriptionProps {
     className?: string;
 }
 
@@ -266,19 +294,19 @@ declare interface SheetHeaderProps extends React_2.HTMLAttributes<HTMLDivElement
 
 export declare const SheetOverlay: React_2.FC<SheetOverlayProps>;
 
-declare interface SheetOverlayProps extends SheetPrimitive.DialogOverlayProps {
+declare interface SheetOverlayProps extends DialogPrimitive.DialogOverlayProps {
     className?: string;
 }
 
-export declare const SheetPortal: React_2.FC<SheetPrimitive.DialogPortalProps>;
+export declare const SheetPortal: React_2.FC<DialogPrimitive.DialogPortalProps>;
 
 export declare const SheetTitle: React_2.FC<SheetTitleProps>;
 
-declare interface SheetTitleProps extends SheetPrimitive.DialogTitleProps {
+declare interface SheetTitleProps extends DialogPrimitive.DialogTitleProps {
     className?: string;
 }
 
-export declare const SheetTrigger: React_2.ForwardRefExoticComponent<SheetPrimitive.DialogTriggerProps & React_2.RefAttributes<HTMLButtonElement>>;
+export declare const SheetTrigger: React_2.ForwardRefExoticComponent<DialogPrimitive.DialogTriggerProps & React_2.RefAttributes<HTMLButtonElement>>;
 
 declare const sheetVariants: (props?: ({
     side?: "top" | "right" | "bottom" | "left" | null | undefined;

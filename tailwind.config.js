@@ -24,8 +24,10 @@ module.exports = {
     colors: {
       base: {
         transparent: "transparent",
-        white: "var(--base-white)",
-        black: "var(--base-black)",
+        white:
+          "color-mix(in srgb, var(--base-white) calc(<alpha-value> * 100%), transparent)",
+        black:
+          "color-mix(in srgb, var(--base-black) calc(<alpha-value> * 100%), transparent)",
       },
       main: {
         100: "var(--main-100)",
