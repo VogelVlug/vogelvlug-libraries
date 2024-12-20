@@ -1,12 +1,30 @@
 This is a design-system library that is bundled and transpiled to then be used by other projects.
 
 It contains the following things:
+
 - Tailwind Configuration that can be consumed by other projects as a base config
-- Base CSS variables (that tailwind relies on), but that can be used by other projects as well 
-(or specifically replaced to alter the styling of the design-system)
+- Base CSS variables (that tailwind relies on), but that can be used by other projects as well
+  (or specifically replaced to alter the styling of the design-system)
 - React components in src/components, that are built on top of Radix (and mostly come from Shadcn/UI),
-that are then styled with tailwind
+  that are then styled with tailwind
 - Storybook Stories for all components, that are not published to the projects, but can be used in this
-design-system during development to test the components
+  design-system during development to test the components
+
+And is build accourding to the following folder structure:
+
+- src/components:
+  Contains all React components, always in a seperate folder for each component. Storybook stories belong into the same folder as the components they describe. Components aswell as Component Files are always named in pascal case.
+- src/lib:
+  Contains all other logical code, that is not a component, but is needed for the design-system to work.
+- src/provider:
+  Contains a provider components that needs to be wrapped around the application to make the design-system work.
+- src/base.css:
+  A base css file that applies some default styling
+- src/variables.css:
+  A base css file that contains all the base css variables that are used in the design-system.
+- ./tailwind.config.ts:
+  The tailwind configuration file that is used to build the design-system.
 
 Whenever adding new components, ensure to add a storybook story for them aswell. Always make sure to follow the same structure and patterns as the existing components and stories.
+
+This project uses yarn as a package manager, so make sure to use yarn when installing dependencies.
