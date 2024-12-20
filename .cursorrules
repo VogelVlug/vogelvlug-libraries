@@ -1,0 +1,12 @@
+This is a design-system library that is bundled and transpiled to then be used by other projects.
+
+It contains the following things:
+- Tailwind Configuration that can be consumed by other projects as a base config
+- Base CSS variables (that tailwind relies on), but that can be used by other projects as well 
+(or specifically replaced to alter the styling of the design-system)
+- React components in src/components, that are built on top of Radix (and mostly come from Shadcn/UI),
+that are then styled with tailwind
+- Storybook Stories for all components, that are not published to the projects, but can be used in this
+design-system during development to test the components
+
+Whenever adding new components, ensure to add a storybook story for them aswell. Always make sure to follow the same structure and patterns as the existing components and stories.
