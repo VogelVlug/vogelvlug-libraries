@@ -56,15 +56,19 @@ export declare const CollapsibleContent: ForwardRefExoticComponent<CollapsiblePr
 
 export declare const CollapsibleTrigger: React.FC<CollapsiblePrimitive.CollapsibleTriggerProps>;
 
+declare type ColorMode = "dark" | "light" | "system";
+
 declare interface DesignSystemContextValue {
     LinkElement: React.ElementType;
     ImageElement: React.ElementType;
     logo: {
         src: string;
     };
+    colorMode: ColorMode;
+    setColorMode: (colorMode: ColorMode) => void;
 }
 
-export declare const DesignSystemProvider: React.FC<PropsWithChildren<Optional<DesignSystemContextValue, "ImageElement" | "LinkElement">>>;
+export declare const DesignSystemProvider: React.FC<PropsWithChildren<Optional<DesignSystemContextValue, "ImageElement" | "LinkElement" | "colorMode" | "setColorMode">>>;
 
 export declare const Divider: React_2.ForwardRefExoticComponent<Omit<SeparatorPrimitive.SeparatorProps & React_2.RefAttributes<HTMLDivElement>, "ref"> & React_2.RefAttributes<HTMLDivElement>>;
 

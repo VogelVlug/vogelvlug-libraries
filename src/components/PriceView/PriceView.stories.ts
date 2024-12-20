@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { PriceView as Component } from "./PriceView";
 
 const meta: Meta<typeof Component> = {
-  title: "Category/PriceView",
+  title: "Data Display/PriceView",
   component: Component,
   parameters: {
     layout: "centered",

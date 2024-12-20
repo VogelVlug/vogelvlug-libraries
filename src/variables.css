@@ -62,7 +62,7 @@
 }
 /* Semantic Colors */
 :root {
-  /* Mode 1 */
+  /* Mode 1 - Light */
   /* color */
   --background-default: var(--neutral-100);
   --background-subtle: var(--neutral-200);
@@ -86,4 +86,17 @@
   --text-overtitle: var(--main-400);
   --text-subtitle: var(--neutral-400);
   --text-title: var(--main-600);
+}
+
+/* Dark mode overrides */
+.dark {
+  --background-default: var(--neutral-700);
+  --background-subtle: var(--neutral-600);
+  --border-default: var(--neutral-500);
+  --surface-default: var(--neutral-600);
+  --text-caption: var(--neutral-400);
+  --text-default: var(--neutral-100);
+  --text-title: var(--base-white);
+  --text-subtitle: var(--neutral-200);
+  --text-overtitle: var(--neutral-300);
 }
