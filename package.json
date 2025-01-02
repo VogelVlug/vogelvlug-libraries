@@ -1,6 +1,6 @@
 {
   "name": "@vogelvlug/vogelvlug-design-system",
-  "version": "1.1.5",
+  "version": "1.1.7",
   "type": "module",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
@@ -26,7 +26,7 @@
     "url": "git+https://github.com/VogelVlug/vogelvlug-design-system.git"
   },
   "author": "Markus <markus@vogelvlug.de>",
-  "license": "UNLICENSED",
+  "license": "GPL-3.0-or-later",
   "packageManager": "yarn@4.5.1",
   "scripts": {
     "storybook": "storybook dev -p 6006 --ci",

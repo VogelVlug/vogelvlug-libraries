@@ -9,9 +9,9 @@
   --accent-500: rgb(218 141 11);
   --accent-600: rgb(105 74 22);
   --accent-700: rgb(38 29 13);
-  --base-black: rgb(0 0 0);
-  --base-transparent: rgb(255 255 255 / 0);
-  --base-white: rgb(255 255 255);
+  --base-black: 0 0 0;
+  --base-transparent: 255 255 255 0;
+  --base-white: 255 255 255;
   --main-100: rgb(204 236 255);
   --main-200: rgb(102 199 255);
   --main-300: rgb(0 162 255);
