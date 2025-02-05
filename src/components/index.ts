@@ -18,4 +18,5 @@ export * from "./Skeleton/Skeleton";
 export * from "./Switch/Switch";
 export * from "./Table/Table";
 export * from "./Testimonial/Testimonial";
+export * from "./Tooltip/Tooltip";
 export * from "./Typography/Typography";

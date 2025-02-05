@@ -22,6 +22,7 @@ import * as SelectPrimitive from '@radix-ui/react-select';
 import * as SeparatorPrimitive from '@radix-ui/react-separator';
 import { SlotProps } from '@radix-ui/react-slot';
 import * as SwitchPrimitives from '@radix-ui/react-switch';
+import * as TooltipPrimitive from '@radix-ui/react-tooltip';
 import { VariantProps } from 'class-variance-authority';
 
 export declare const Alert: React.FC<PropsWithChildren<AlertProps>>;
@@ -356,6 +357,14 @@ declare interface TestimonialProps {
     text: string;
     className?: string;
 }
+
+export declare const Tooltip: React_2.FC<TooltipPrimitive.TooltipProps>;
+
+export declare const TooltipContent: React_2.ForwardRefExoticComponent<Omit<TooltipPrimitive.TooltipContentProps & React_2.RefAttributes<HTMLDivElement>, "ref"> & React_2.RefAttributes<HTMLDivElement>>;
+
+export declare const TooltipProvider: React_2.FC<TooltipPrimitive.TooltipProviderProps>;
+
+export declare const TooltipTrigger: React_2.ForwardRefExoticComponent<TooltipPrimitive.TooltipTriggerProps & React_2.RefAttributes<HTMLButtonElement>>;
 
 export declare const Typography: React.FC<TypographyProps>;
 
