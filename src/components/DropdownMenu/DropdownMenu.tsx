@@ -16,7 +16,10 @@ const DropdownMenuSub = DropdownMenuPrimitive.Sub;
 
 const DropdownMenuRadioGroup = DropdownMenuPrimitive.RadioGroup;
 
-interface DropdownMenuSubTriggerProps extends React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.SubTrigger> {
+interface DropdownMenuSubTriggerProps
+  extends React.ComponentPropsWithoutRef<
+    typeof DropdownMenuPrimitive.SubTrigger
+  > {
   inset?: boolean;
 }
 
@@ -39,7 +42,10 @@ const DropdownMenuSubTrigger: React.FC<DropdownMenuSubTriggerProps> = ({
   </DropdownMenuPrimitive.SubTrigger>
 );
 
-interface DropdownMenuSubContentProps extends React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.SubContent> { }
+interface DropdownMenuSubContentProps
+  extends React.ComponentPropsWithoutRef<
+    typeof DropdownMenuPrimitive.SubContent
+  > {}
 
 const DropdownMenuSubContent: React.FC<DropdownMenuSubContentProps> = ({
   className,
@@ -54,7 +60,8 @@ const DropdownMenuSubContent: React.FC<DropdownMenuSubContentProps> = ({
   />
 );
 
-interface DropdownMenuContentProps extends React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Content> {
+interface DropdownMenuContentProps
+  extends React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Content> {
   sideOffset?: number;
 }
 
@@ -75,7 +82,8 @@ const DropdownMenuContent: React.FC<DropdownMenuContentProps> = ({
   </DropdownMenuPrimitive.Portal>
 );
 
-interface DropdownMenuItemProps extends React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Item> {
+interface DropdownMenuItemProps
+  extends React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Item> {
   inset?: boolean;
 }
 
@@ -86,7 +94,7 @@ const DropdownMenuItem: React.FC<DropdownMenuItemProps> = ({
 }) => (
   <DropdownMenuPrimitive.Item
     className={cn(
-      "relative flex cursor-default select-none items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+      "relative flex cursor-default select-none items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 dark:focus:bg-neutral-500 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
       inset && "pl-8",
       className,
     )}
@@ -94,7 +102,10 @@ const DropdownMenuItem: React.FC<DropdownMenuItemProps> = ({
   />
 );
 
-interface DropdownMenuCheckboxItemProps extends React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.CheckboxItem> {
+interface DropdownMenuCheckboxItemProps
+  extends React.ComponentPropsWithoutRef<
+    typeof DropdownMenuPrimitive.CheckboxItem
+  > {
   checked?: boolean;
 }
 
@@ -121,7 +132,10 @@ const DropdownMenuCheckboxItem: React.FC<DropdownMenuCheckboxItemProps> = ({
   </DropdownMenuPrimitive.CheckboxItem>
 );
 
-interface DropdownMenuRadioItemProps extends React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.RadioItem> { }
+interface DropdownMenuRadioItemProps
+  extends React.ComponentPropsWithoutRef<
+    typeof DropdownMenuPrimitive.RadioItem
+  > {}
 
 const DropdownMenuRadioItem: React.FC<DropdownMenuRadioItemProps> = ({
   className,
@@ -144,7 +158,8 @@ const DropdownMenuRadioItem: React.FC<DropdownMenuRadioItemProps> = ({
   </DropdownMenuPrimitive.RadioItem>
 );
 
-interface DropdownMenuLabelProps extends React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Label> {
+interface DropdownMenuLabelProps
+  extends React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Label> {
   inset?: boolean;
 }
 
@@ -163,7 +178,10 @@ const DropdownMenuLabel: React.FC<DropdownMenuLabelProps> = ({
   />
 );
 
-interface DropdownMenuSeparatorProps extends React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Separator> { }
+interface DropdownMenuSeparatorProps
+  extends React.ComponentPropsWithoutRef<
+    typeof DropdownMenuPrimitive.Separator
+  > {}
 
 const DropdownMenuSeparator: React.FC<DropdownMenuSeparatorProps> = ({
   className,
@@ -175,7 +193,8 @@ const DropdownMenuSeparator: React.FC<DropdownMenuSeparatorProps> = ({
   />
 );
 
-interface DropdownMenuShortcutProps extends React.HTMLAttributes<HTMLSpanElement> { }
+interface DropdownMenuShortcutProps
+  extends React.HTMLAttributes<HTMLSpanElement> {}
 
 const DropdownMenuShortcut: React.FC<DropdownMenuShortcutProps> = ({
   className,
@@ -204,5 +223,5 @@ export {
   DropdownMenuSub,
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
-  DropdownMenuTrigger
+  DropdownMenuTrigger,
 };
