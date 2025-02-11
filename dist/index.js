@@ -7858,7 +7858,7 @@ const fv = ({ children: e }) => /* @__PURE__ */ W(jm, { className: "relative z-1
     " ",
     /* @__PURE__ */ d(en, { className: "size-4" })
   ] }),
-  /* @__PURE__ */ d(Xm, { className: "left-0 top-0 w-full data-[motion^=from-]:animate-in data-[motion^=to-]:animate-out data-[motion^=from-]:fade-in data-[motion^=to-]:fade-out data-[motion=from-end]:slide-in-from-right-52 data-[motion=from-start]:slide-in-from-left-52 data-[motion=to-end]:slide-out-to-right-52 data-[motion=to-start]:slide-out-to-left-52 md:absolute md:w-auto", children: /* @__PURE__ */ d(Di, { className: "flex flex-col gap-2 p-2", children: n }) })
+  /* @__PURE__ */ d(Xm, { className: "left-0 top-0 w-full bg-default data-[motion^=from-]:animate-in data-[motion^=to-]:animate-out data-[motion^=from-]:fade-in data-[motion^=to-]:fade-out data-[motion=from-end]:slide-in-from-right-52 data-[motion=from-start]:slide-in-from-left-52 data-[motion=to-end]:slide-out-to-right-52 data-[motion=to-start]:slide-out-to-left-52 md:absolute md:w-auto", children: /* @__PURE__ */ d(Di, { className: "flex flex-col gap-2 p-2", children: n }) })
 ] }) : /* @__PURE__ */ d(Qn, { children: /* @__PURE__ */ d(Zm, { href: e, title: t }) }), Zm = ({ href: e, title: t }) => {
   const { LinkElement: n } = nn();
   return /* @__PURE__ */ d(ki, { asChild: !0, children: /* @__PURE__ */ d(n, { className: "text-sm font-semibold", href: e, children: t }) });
