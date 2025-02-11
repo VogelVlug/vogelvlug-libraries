@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-
+import { History } from "lucide-react";
 import { NavMenu as Component, NavMenuItem, NavSubMenuItem } from "./NavMenu";
 
 const meta: Meta<typeof Component> = {
@@ -24,6 +24,7 @@ export const NavMenu: Story = {
             href="/about/history"
             title="History"
             description="Learn about our history"
+            Icon={() => <History />}
           />
         </NavMenuItem>
         <NavMenuItem href="/services" title="Services">

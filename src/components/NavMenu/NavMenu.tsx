@@ -1,14 +1,15 @@
 "use client";
 
 import * as NavMenuPrimitive from "@radix-ui/react-navigation-menu";
-import { ChevronDown } from "lucide-react";
-import { PropsWithChildren } from "react";
+import { ChevronDown, LucideProps } from "lucide-react";
+import { PropsWithChildren, ReactNode } from "react";
 import { useDesignSystem } from "../../provider/DesignSystemProvider";
 
 interface SubRoute {
   href: string;
   title: string;
   description: string;
+  Icon?: (props: LucideProps) => ReactNode;
 }
 
 export const NavMenu: React.FC<PropsWithChildren> = ({ children }) => {
@@ -19,7 +20,7 @@ export const NavMenu: React.FC<PropsWithChildren> = ({ children }) => {
       </NavMenuPrimitive.List>
 
       <div className="absolute top-full flex justify-center">
-        <NavMenuPrimitive.Viewport className="origin-top-center relative mt-1.5 h-[var(--radix-navigation-menu-viewport-height)] w-full overflow-hidden rounded-md border border-default bg-popover text-popover-foreground shadow-lg data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90 md:w-[var(--radix-navigation-menu-viewport-width)]" />
+        <NavMenuPrimitive.Viewport className="origin-top-center relative mt-4 h-[var(--radix-navigation-menu-viewport-height)] w-full overflow-hidden rounded-md border border-default bg-popover text-popover-foreground shadow-lg data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90 md:w-[var(--radix-navigation-menu-viewport-width)]" />
       </div>
     </NavMenuPrimitive.Root>
   );
@@ -49,11 +50,9 @@ export const NavMenuItem: React.FC<NavMenuItemProps> = ({
         {title} <ChevronDown className="size-4" />
       </NavMenuPrimitive.Trigger>
       <NavMenuPrimitive.Content className="left-0 top-0 w-full data-[motion^=from-]:animate-in data-[motion^=to-]:animate-out data-[motion^=from-]:fade-in data-[motion^=to-]:fade-out data-[motion=from-end]:slide-in-from-right-52 data-[motion=from-start]:slide-in-from-left-52 data-[motion=to-end]:slide-out-to-right-52 data-[motion=to-start]:slide-out-to-left-52 md:absolute md:w-auto">
-        <NavMenuPrimitive.Sub>
-          <NavMenuPrimitive.List className="flex flex-col gap-4 p-4">
-            {children}
-          </NavMenuPrimitive.List>
-        </NavMenuPrimitive.Sub>
+        <NavMenuPrimitive.List className="flex flex-col gap-2 p-2">
+          {children}
+        </NavMenuPrimitive.List>
       </NavMenuPrimitive.Content>
     </NavMenuPrimitive.Item>
   );
@@ -80,17 +79,24 @@ export const NavSubMenuItem: React.FC<SubRoute> = ({
   href,
   title,
   description,
+  Icon,
 }) => {
   const { LinkElement } = useDesignSystem();
 
   return (
-    <li className="w-[224px]">
+    <NavMenuPrimitive.Item className="w-[320px]">
       <NavMenuPrimitive.Link asChild>
-        <LinkElement href={href} className="flex flex-col gap-1">
-          <span className="text-sm font-semibold">{title}</span>
-          <span className="text-xs text-subtitle">{description}</span>
+        <LinkElement
+          href={href}
+          className="flex items-center gap-4 rounded p-3 hover:bg-subtle"
+        >
+          {Icon ? <Icon className="h-6 w-6 text-color-accent" /> : null}
+          <span className="flex flex-col">
+            <span className="text-sm font-semibold">{title}</span>
+            <span className="text-xs text-subtitle">{description}</span>
+          </span>
         </LinkElement>
       </NavMenuPrimitive.Link>
-    </li>
+    </NavMenuPrimitive.Item>
   );
 };

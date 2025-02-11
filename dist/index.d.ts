@@ -13,10 +13,12 @@ import { FormProviderProps } from 'react-hook-form';
 import { ForwardRefExoticComponent } from 'react';
 import { JSX as JSX_2 } from 'react/jsx-runtime';
 import * as LabelPrimitive from '@radix-ui/react-label';
+import { LucideProps } from 'lucide-react';
 import { Optional } from '@vogelvlug/typescript-utils';
 import { PropsWithChildren } from 'react';
 import * as RadioGroupPrimitive from '@radix-ui/react-radio-group';
 import * as React_2 from 'react';
+import { ReactNode } from 'react';
 import { RefAttributes } from 'react';
 import * as SelectPrimitive from '@radix-ui/react-select';
 import * as SeparatorPrimitive from '@radix-ui/react-separator';
@@ -319,6 +321,7 @@ declare interface SubRoute {
     href: string;
     title: string;
     description: string;
+    Icon?: (props: LucideProps) => ReactNode;
 }
 
 export declare const Switch: ({ className, variant, ...props }: SwitchProps) => JSX_2.Element;
