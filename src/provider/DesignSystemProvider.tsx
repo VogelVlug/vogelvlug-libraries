@@ -1,7 +1,7 @@
 "use client";
 
 import { Optional } from "@vogelvlug/typescript-utils";
-import { createContext, PropsWithChildren, useContext, useState } from "react";
+import { createContext, PropsWithChildren, useContext, useEffect, useState } from "react";
 
 type ColorMode = "dark" | "light" | "system";
 
@@ -44,7 +44,10 @@ const applyColorMode = (colorMode: ColorMode) => {
 
 export const DesignSystemProvider: React.FC<
   PropsWithChildren<
-    Optional<DesignSystemContextValue, "ImageElement" | "LinkElement" | "colorMode" | "setColorMode">
+    Optional<
+      DesignSystemContextValue,
+      "ImageElement" | "LinkElement" | "colorMode" | "setColorMode"
+    >
   >
 > = ({
   children,
@@ -53,20 +56,20 @@ export const DesignSystemProvider: React.FC<
   LinkElement = "a",
   colorMode: defaultColorMode = "system",
 }) => {
-  const [colorMode, setColorModeState] = useState<ColorMode>(
-    () => (localStorage?.getItem(STORAGE_KEY) as ColorMode) || defaultColorMode
-  );
+  const [colorMode, setColorMode] = useState<ColorMode>(defaultColorMode);
 
-  const setColorMode = (newColorMode: ColorMode) => {
-    localStorage?.setItem(STORAGE_KEY, newColorMode);
-    setColorModeState(newColorMode);
-    applyColorMode(newColorMode);
-  };
-
-  // Initialize color mode
-  if (typeof window !== 'undefined') {
+  // Load color mode from localStorage upon first render (dirty workaround for SSR)
+  useEffect(() => {
+    const colorMode = localStorage?.getItem(STORAGE_KEY) as ColorMode;
+    setColorMode(colorMode);
     applyColorMode(colorMode);
-  }
+  }, []);
+
+  // Update the color mode whenever it changes
+  useEffect(() => {
+    localStorage.setItem(STORAGE_KEY, colorMode);
+    applyColorMode(colorMode);
+  }, [colorMode]);
 
   return (
     <DesignSystemContext.Provider
