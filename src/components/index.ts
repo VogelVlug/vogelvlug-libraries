@@ -1,6 +1,7 @@
 export * from "./Alert/Alert";
 export * from "./Button/Button";
 export * from "./Checkbox/Checkbox";
+export * from "./CircularIcon/CircularIcon";
 export * from "./ClickableLogo/ClickableLogo";
 export * from "./Collapsible/Collapsible";
 export * from "./Dialog/Dialog";

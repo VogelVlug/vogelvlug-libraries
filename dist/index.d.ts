@@ -50,6 +50,13 @@ declare const buttonVariants: (props?: ({
 
 export declare const Checkbox: React_2.ForwardRefExoticComponent<Omit<CheckboxPrimitive.CheckboxProps & React_2.RefAttributes<HTMLButtonElement>, "ref"> & React_2.RefAttributes<HTMLButtonElement>>;
 
+export declare const CircularIcon: React.FC<CircularIconProps>;
+
+declare interface CircularIconProps extends VariantProps<typeof wrapperVariants> {
+    variant?: "main" | "accent";
+    Icon: LucideIcon;
+}
+
 export declare const ClickableLogo: default_2.FC<VariantProps<typeof logoVariants>>;
 
 export declare const Collapsible: React.FC<CollapsiblePrimitive.CollapsibleProps>;
@@ -380,7 +387,7 @@ declare type TypographyProps = VariantProps<typeof typographyVariants> & {
 export declare type TypographyVariant = VariantProps<typeof typographyVariants>["variant"];
 
 declare const typographyVariants: (props?: ({
-    variant?: "main" | "h5" | "h2" | "h3" | "label" | "body" | "h1" | "h4" | "h6" | "subtitle" | "overtitle" | "accent" | null | undefined;
+    variant?: "main" | "h5" | "h2" | "h3" | "label" | "body" | "h1" | "h4" | "h6" | "accent" | "subtitle" | "overtitle" | null | undefined;
     align?: "center" | "right" | "left" | null | undefined;
 } & ClassProp) | undefined) => string;
 
@@ -396,5 +403,9 @@ export declare const useFormField: () => {
     formDescriptionId: string;
     formMessageId: string;
 };
+
+declare const wrapperVariants: (props?: ({
+    variant?: "main" | "accent" | null | undefined;
+} & ClassProp) | undefined) => string;
 
 export { }
