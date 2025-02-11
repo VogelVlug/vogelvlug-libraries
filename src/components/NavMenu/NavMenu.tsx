@@ -1,15 +1,15 @@
 "use client";
 
 import * as NavMenuPrimitive from "@radix-ui/react-navigation-menu";
-import { ChevronDown, LucideProps } from "lucide-react";
-import { PropsWithChildren, ReactNode } from "react";
+import { ChevronDown, LucideIcon } from "lucide-react";
+import { PropsWithChildren } from "react";
 import { useDesignSystem } from "../../provider/DesignSystemProvider";
 
 interface SubRoute {
   href: string;
   title: string;
   description: string;
-  Icon?: (props: LucideProps) => ReactNode;
+  Icon?: LucideIcon;
 }
 
 export const NavMenu: React.FC<PropsWithChildren> = ({ children }) => {

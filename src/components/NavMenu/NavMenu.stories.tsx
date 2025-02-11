@@ -24,7 +24,7 @@ export const NavMenu: Story = {
             href="/about/history"
             title="History"
             description="Learn about our history"
-            Icon={() => <History />}
+            Icon={History}
           />
         </NavMenuItem>
         <NavMenuItem href="/services" title="Services">
