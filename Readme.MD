@@ -2,7 +2,7 @@
 
 This is my own personal design system based on my Corporate Identity. It is built with shadcn/ui as a base and styled furthor with TailwindCSS.
 
-If you want you projects to look just as mine, feel free to use my design system, it is licensed under the GNU GPL License.
+If you want your projects to look just as mine, feel free to use my design system, it is licensed under the GNU GPL License.
 
 ## Usage
 
