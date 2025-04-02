@@ -1,13 +1,62 @@
-# VogelVlug Design System
+# @vogelvlug/monorepo
 
-This is my own personal design system based on my Corporate Identity. It is built with shadcn/ui as a base and styled furthor with TailwindCSS.
+This monorepo contains various packages used across different projects:
 
-If you want your projects to look just as mine, feel free to use my design system, it is licensed under the GNU GPL License.
+## Packages
 
-## Usage
+### @vogelvlug/design-system
 
-Make sure to configure your project to be able to access packages from github, then simply install the package with `yarn add @vogelvlug/vogelvlug-design-system`, import the components you need and use them in your project.
+A comprehensive design system that includes:
 
-## Start the storybook for development
+- React components built on top of Radix UI
+- Tailwind CSS configuration
+- Base CSS variables
+- Storybook stories for component development
 
-To start the development storybook server, run `yarn storybook`.
+### @vogelvlug/default-locales
+
+A package providing default locale configurations for internationalization:
+
+- Predefined locale configurations
+- TypeScript types for locale objects
+- Utility functions for locale management
+
+## Development
+
+This project uses Yarn workspaces for package management. To get started:
+
+1. Install dependencies:
+
+```bash
+yarn install
+```
+
+2. Build all packages:
+
+```bash
+yarn build
+```
+
+3. Run Storybook for the design system:
+
+```bash
+cd packages/design-system
+yarn storybook
+```
+
+## Publishing
+
+Packages are published to GitHub Packages. To publish a package:
+
+```bash
+cd packages/<package-name>
+yarn publish
+```
+
+Or use the release scripts from the root:
+
+```bash
+yarn release:patch  # for patch updates
+yarn release:minor  # for minor updates
+yarn release:major  # for major updates
+```

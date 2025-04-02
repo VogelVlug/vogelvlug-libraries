@@ -2592,18 +2592,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vogelvlug/typescript-utils@npm:^1.0.2":
-  version: 1.0.3
-  resolution: "@vogelvlug/typescript-utils@npm:1.0.3::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40VogelVlug%2Ftypescript-utils%2F1.0.3%2Fcad7377048b99a6d3ef8d5090dbba659733ebeac"
-  peerDependencies:
-    typescript: ^5.6.3
-  checksum: 10c0/a663eb57cb45ef65bb02029e2d1c98dabbec8f908ca866232816a6844460d966b98a4ecfa506dcfe4e79422a8d6a04989b09966eda6bb6420bbbe09dfde3477a
-  languageName: node
-  linkType: hard
-
-"@vogelvlug/vogelvlug-design-system@workspace:.":
+"@vogelvlug/design-system@workspace:packages/design-system":
   version: 0.0.0-use.local
-  resolution: "@vogelvlug/vogelvlug-design-system@workspace:."
+  resolution: "@vogelvlug/design-system@workspace:packages/design-system"
   dependencies:
     "@hookform/resolvers": "npm:^3.9.1"
     "@radix-ui/react-checkbox": "npm:^1.1.2"
@@ -2651,6 +2642,31 @@ __metadata:
   peerDependencies:
     react: ^18.3.1
     react-dom: ^18.3.1
+  languageName: unknown
+  linkType: soft
+
+"@vogelvlug/libraries@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "@vogelvlug/libraries@workspace:."
+  languageName: unknown
+  linkType: soft
+
+"@vogelvlug/typescript-utils@npm:^1.0.2":
+  version: 1.0.3
+  resolution: "@vogelvlug/typescript-utils@npm:1.0.3::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40VogelVlug%2Ftypescript-utils%2F1.0.3%2Fcad7377048b99a6d3ef8d5090dbba659733ebeac"
+  peerDependencies:
+    typescript: ^5.6.3
+  checksum: 10c0/a663eb57cb45ef65bb02029e2d1c98dabbec8f908ca866232816a6844460d966b98a4ecfa506dcfe4e79422a8d6a04989b09966eda6bb6420bbbe09dfde3477a
+  languageName: node
+  linkType: hard
+
+"@vogelvlug/typescript-utils@workspace:packages/typescript-utils":
+  version: 0.0.0-use.local
+  resolution: "@vogelvlug/typescript-utils@workspace:packages/typescript-utils"
+  dependencies:
+    typescript: "npm:~5.6.2"
+    vite: "npm:^5.4.10"
+    vite-plugin-dts: "npm:^4.4.0"
   languageName: unknown
   linkType: soft
 

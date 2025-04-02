@@ -6,3 +6,4 @@ build
 .pnp.loader.mjs
 *storybook.log
 tsconfig-build.tsbuildinfo
+**/dist/

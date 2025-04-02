@@ -29,7 +29,7 @@ export default defineConfig({
     rollupOptions: {
       external: ["react", "react/jsx-runtime", "react-dom"],
       output: {
-        banner: "'use client';",
+        banner: "'use client';", // This makes all components client side TODO: Check if we can improve this somehow
       },
     },
   },
