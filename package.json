@@ -5,11 +5,17 @@
     "packages/*"
   ],
   "packageManager": "yarn@4.5.1",
+  "type": "module",
   "scripts": {
     "build": "yarn workspaces foreach -pi --all run build",
     "publish": "yarn workspaces foreach -pi --all run publish",
     "release:patch": "yarn workspaces foreach -pi --all run release:patch",
     "release:minor": "yarn workspaces foreach -pi --all run release:minor",
-    "release:major": "yarn workspaces foreach -pi --all run release:major"
+    "release:major": "yarn workspaces foreach -pi --all run release:major",
+    "publish:package": "NODE_NO_WARNINGS=1 node --loader ts-node/esm scripts/publish-package.ts"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
   }
 }

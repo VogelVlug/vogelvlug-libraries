@@ -46,17 +46,28 @@ yarn storybook
 
 ## Publishing
 
-Packages are published to GitHub Packages. To publish a package:
+Packages are published to GitHub Packages. You have two options for publishing:
 
-```bash
-cd packages/<package-name>
-yarn publish
-```
+### Publish All Packages
 
-Or use the release scripts from the root:
+To publish all packages with the same version bump:
 
 ```bash
 yarn release:patch  # for patch updates
 yarn release:minor  # for minor updates
 yarn release:major  # for major updates
 ```
+
+### Publish Specific Package
+
+To publish a specific package with an interactive selection:
+
+```bash
+yarn publish:package
+```
+
+This will:
+1. Show you a list of available packages with their current versions
+2. Let you select which package to publish
+3. Let you choose the version bump type (patch, minor, or major)
+4. Publish the selected package with the chosen version bump
