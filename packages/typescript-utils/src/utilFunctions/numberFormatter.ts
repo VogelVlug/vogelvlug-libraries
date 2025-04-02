@@ -18,10 +18,7 @@ export const numberFormatter = (num?: number, digits?: number): string => {
       return Math.abs(num) >= item.value;
     });
   const formattedNum = item
-    ? (Math.abs(num) / item.value)
-        .toFixed(digits)
-        .replace(".", ",")
-        .replace(rx, "$1") + item.symbol
+    ? (Math.abs(num) / item.value).toFixed(digits).replace(".", ",").replace(rx, "$1") + item.symbol
     : "0";
   return negative ? "-" + formattedNum : formattedNum;
 };

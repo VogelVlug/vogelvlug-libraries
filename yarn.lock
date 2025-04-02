@@ -2724,6 +2724,8 @@ __metadata:
   dependencies:
     "@types/inquirer": "npm:^9.0.7"
     inquirer: "npm:^9.2.14"
+    prettier: "npm:^3.3.3"
+    prettier-plugin-tailwindcss: "npm:^0.6.8"
     ts-node: "npm:^10.9.2"
     typescript: "npm:^5.3.3"
   languageName: unknown

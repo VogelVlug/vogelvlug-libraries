@@ -26,7 +26,8 @@ export const Sheet: Story = {
           <div className="grid gap-4">
             <h2 className="text-lg font-semibold">Sheet Title</h2>
             <p className="text-sm text-muted-foreground">
-              This is a basic sheet component that slides in from the side of the screen.
+              This is a basic sheet component that slides in from the side of
+              the screen.
             </p>
             <div className="flex flex-col gap-2">
               <Button>Action 1</Button>

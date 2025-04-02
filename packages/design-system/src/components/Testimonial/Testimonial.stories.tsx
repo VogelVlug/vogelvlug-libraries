@@ -1,14 +1,14 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
-import { Testimonial as Component } from './Testimonial';
+import { Testimonial as Component } from "./Testimonial";
 
 const meta: Meta<typeof Component> = {
-  title: 'Layout/Testimonial',
+  title: "Layout/Testimonial",
   component: Component,
   parameters: {
-    layout: 'centered',
+    layout: "centered",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
 };
 
 export default meta;
@@ -19,6 +19,6 @@ export const Testimonial: Story = {
     imageSrc: "https://i.pravatar.cc/300",
     name: "Jane Smith",
     tagline: "CEO at TechCorp",
-    text: "This product has completely transformed how we work. The interface is intuitive and the features are exactly what we needed. I couldn't be happier with the results we've seen since implementing it."
+    text: "This product has completely transformed how we work. The interface is intuitive and the features are exactly what we needed. I couldn't be happier with the results we've seen since implementing it.",
   },
 };

@@ -1,1 +1,1 @@
-export type TsFixMe = any
+export type TsFixMe = any;

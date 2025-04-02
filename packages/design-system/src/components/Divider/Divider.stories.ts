@@ -1,14 +1,14 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
-import { Divider as Component } from './Divider';
+import { Divider as Component } from "./Divider";
 
 const meta: Meta<typeof Component> = {
-  title: 'Fundamentals/Divider',
+  title: "Fundamentals/Divider",
   component: Component,
   parameters: {
-    layout: 'centered',
+    layout: "centered",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
 };
 
 export default meta;
@@ -16,6 +16,6 @@ type Story = StoryObj<typeof Component>;
 
 export const Divider: Story = {
   args: {
-    className: "my-4"
+    className: "my-4",
   },
 };

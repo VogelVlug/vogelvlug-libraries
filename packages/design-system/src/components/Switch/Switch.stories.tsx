@@ -1,14 +1,14 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
-import { Switch as Component } from './Switch';
+import { Switch as Component } from "./Switch";
 
 const meta: Meta<typeof Component> = {
-  title: 'Form/Switch',
+  title: "Form/Switch",
   component: Component,
   parameters: {
-    layout: 'centered',
+    layout: "centered",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
 };
 
 export default meta;
@@ -20,6 +20,6 @@ export const Switch: Story = {
 
 export const AccentSwitch: Story = {
   args: {
-    variant: 'accent',
+    variant: "accent",
   },
 };

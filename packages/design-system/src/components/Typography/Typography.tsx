@@ -30,7 +30,9 @@ const typographyVariants = cva("inline-block", {
   },
 });
 
-export type TypographyVariant = VariantProps<typeof typographyVariants>["variant"];
+export type TypographyVariant = VariantProps<
+  typeof typographyVariants
+>["variant"];
 
 type TypographyProps = VariantProps<typeof typographyVariants> & {
   element?: ElementType;

@@ -49,35 +49,45 @@ export const GroupedSelect: Story = {
         </SelectTrigger>
         <SelectContent>
           <SelectGroup>
-            <SelectItem value="math-header" disabled>Mathematics</SelectItem>
+            <SelectItem value="math-header" disabled>
+              Mathematics
+            </SelectItem>
             <SelectItem value="algebra">Algebra</SelectItem>
             <SelectItem value="calculus">Calculus</SelectItem>
             <SelectItem value="geometry">Geometry</SelectItem>
             <SelectItem value="statistics">Statistics</SelectItem>
           </SelectGroup>
           <SelectGroup>
-            <SelectItem value="science-header" disabled>Sciences</SelectItem>
+            <SelectItem value="science-header" disabled>
+              Sciences
+            </SelectItem>
             <SelectItem value="biology">Biology</SelectItem>
             <SelectItem value="chemistry">Chemistry</SelectItem>
             <SelectItem value="physics">Physics</SelectItem>
             <SelectItem value="astronomy">Astronomy</SelectItem>
           </SelectGroup>
           <SelectGroup>
-            <SelectItem value="languages-header" disabled>Languages</SelectItem>
+            <SelectItem value="languages-header" disabled>
+              Languages
+            </SelectItem>
             <SelectItem value="english">English</SelectItem>
             <SelectItem value="spanish">Spanish</SelectItem>
             <SelectItem value="french">French</SelectItem>
             <SelectItem value="german">German</SelectItem>
           </SelectGroup>
           <SelectGroup>
-            <SelectItem value="arts-header" disabled>Arts</SelectItem>
+            <SelectItem value="arts-header" disabled>
+              Arts
+            </SelectItem>
             <SelectItem value="painting">Painting</SelectItem>
             <SelectItem value="sculpture">Sculpture</SelectItem>
             <SelectItem value="photography">Photography</SelectItem>
             <SelectItem value="music">Music</SelectItem>
           </SelectGroup>
           <SelectGroup>
-            <SelectItem value="social-header" disabled>Social Studies</SelectItem>
+            <SelectItem value="social-header" disabled>
+              Social Studies
+            </SelectItem>
             <SelectItem value="history">History</SelectItem>
             <SelectItem value="geography">Geography</SelectItem>
             <SelectItem value="economics">Economics</SelectItem>

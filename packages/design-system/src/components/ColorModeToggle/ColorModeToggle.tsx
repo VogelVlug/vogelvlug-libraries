@@ -18,4 +18,4 @@ export const ColorModeToggle = () => {
       <span className="sr-only">Toggle color mode</span>
     </Button>
   );
-}; 
+};

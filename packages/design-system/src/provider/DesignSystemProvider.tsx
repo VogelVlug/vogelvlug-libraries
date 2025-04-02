@@ -1,7 +1,13 @@
 "use client";
 
 import { Optional } from "@vogelvlug/typescript-utils";
-import { createContext, PropsWithChildren, useContext, useEffect, useState } from "react";
+import {
+  createContext,
+  PropsWithChildren,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 
 type ColorMode = "dark" | "light" | "system";
 

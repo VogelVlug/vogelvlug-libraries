@@ -49,7 +49,7 @@ const sheetVariants = cva(
 
 interface SheetContentProps
   extends SheetPrimitive.DialogContentProps,
-  VariantProps<typeof sheetVariants> {
+    VariantProps<typeof sheetVariants> {
   className?: string;
   children: React.ReactNode;
 }
@@ -66,7 +66,12 @@ const SheetContent: React.FC<SheetContentProps> = ({
       className={cn(sheetVariants({ side }), className)}
       {...props}
     >
-      <Button className="absolute right-4 top-4" variant="outline" size="icon" asChild>
+      <Button
+        className="absolute right-4 top-4"
+        variant="outline"
+        size="icon"
+        asChild
+      >
         <SheetPrimitive.Close>
           <X className="h-4 w-4" />
           <span className="sr-only">Close</span>
@@ -140,6 +145,5 @@ export {
   SheetOverlay,
   SheetPortal,
   SheetTitle,
-  SheetTrigger
+  SheetTrigger,
 };
-

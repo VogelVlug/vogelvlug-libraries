@@ -1,15 +1,22 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
-import { DropdownMenu as Component, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from './DropdownMenu';
-import { Button } from '../Button/Button';
+import {
+  DropdownMenu as Component,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "./DropdownMenu";
+import { Button } from "../Button/Button";
 
 const meta: Meta<typeof Component> = {
-  title: 'Navigation/DropdownMenu',
+  title: "Navigation/DropdownMenu",
   component: Component,
   parameters: {
-    layout: 'centered',
+    layout: "centered",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
 };
 
 export default meta;

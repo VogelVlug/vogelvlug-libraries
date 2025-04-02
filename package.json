@@ -12,11 +12,14 @@
     "release:patch": "yarn workspaces foreach -pi --all run release:patch",
     "release:minor": "yarn workspaces foreach -pi --all run release:minor",
     "release:major": "yarn workspaces foreach -pi --all run release:major",
-    "publish:package": "NODE_NO_WARNINGS=1 node --loader ts-node/esm scripts/publish-package.ts"
+    "publish:package": "NODE_NO_WARNINGS=1 node --loader ts-node/esm scripts/publish-package.ts",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\""
   },
   "devDependencies": {
     "@types/inquirer": "^9.0.7",
     "inquirer": "^9.2.14",
+    "prettier": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.8",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
   }
