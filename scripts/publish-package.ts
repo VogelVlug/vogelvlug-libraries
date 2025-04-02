@@ -18,15 +18,25 @@ const getPackages = (): Package[] => {
 };
 
 const getPackageVersion = (packagePath: string): string => {
-  const packageJson = JSON.parse(readFileSync(join(packagePath, "package.json"), "utf-8"));
+  const packageJson = JSON.parse(
+    readFileSync(join(packagePath, "package.json"), "utf-8"),
+  );
   return packageJson.version;
 };
 
-const publishPackage = async (packageName: string, versionType: "patch" | "minor" | "major") => {
-  console.log(`\nPublishing ${packageName} with ${versionType} version bump...`);
-  execSync(`cd packages/${packageName} && yarn version ${versionType} && yarn publish`, {
-    stdio: "inherit",
-  });
+const publishPackage = async (
+  packageName: string,
+  versionType: "patch" | "minor" | "major",
+) => {
+  console.log(
+    `\nPublishing ${packageName} with ${versionType} version bump...`,
+  );
+  execSync(
+    `cd packages/${packageName} && yarn version ${versionType} && yarn publish`,
+    {
+      stdio: "inherit",
+    },
+  );
   console.log(`\nSuccessfully published ${packageName}!`);
 };
 

@@ -1,8 +1,4 @@
 {
   "plugins": ["prettier-plugin-tailwindcss"],
-  "tailwindConfig": "./packages/design-system/tailwind.config.js",
-  "semi": true,
-  "tabWidth": 2,
-  "trailingComma": "es5",
-  "printWidth": 100
+  "tailwindConfig": "./packages/design-system/tailwind.config.js"
 }
