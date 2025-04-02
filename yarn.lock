@@ -2692,7 +2692,7 @@ __metadata:
     "@types/react": "npm:^18.3.12"
     "@types/react-dom": "npm:^18"
     "@vitejs/plugin-react": "npm:^4.3.3"
-    "@vogelvlug/typescript-utils": "npm:^1.0.3"
+    "@vogelvlug/typescript-utils": "npm:^1.0.4"
     autoprefixer: "npm:^10.4.20"
     class-variance-authority: "npm:^0.7.0"
     clsx: "npm:^2.1.1"
@@ -2731,7 +2731,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@vogelvlug/typescript-utils@npm:^1.0.3, @vogelvlug/typescript-utils@workspace:packages/typescript-utils":
+"@vogelvlug/typescript-utils@npm:^1.0.4, @vogelvlug/typescript-utils@workspace:packages/typescript-utils":
   version: 0.0.0-use.local
   resolution: "@vogelvlug/typescript-utils@workspace:packages/typescript-utils"
   dependencies:

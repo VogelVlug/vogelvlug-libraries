@@ -24,20 +24,42 @@ const getPackageVersion = (packagePath: string): string => {
   return packageJson.version;
 };
 
+const buildPackage = async (packageName: string): Promise<void> => {
+  console.log(`\nBuilding ${packageName}...`);
+  try {
+    execSync(`cd packages/${packageName} && yarn build`, {
+      stdio: "inherit",
+    });
+    console.log(`\nSuccessfully built ${packageName}!`);
+  } catch (error) {
+    console.error(
+      `\nFailed to build ${packageName}. Please fix the build errors before publishing.`,
+    );
+    throw error;
+  }
+};
+
 const publishPackage = async (
   packageName: string,
   versionType: "patch" | "minor" | "major",
 ) => {
-  console.log(
-    `\nPublishing ${packageName} with ${versionType} version bump...`,
-  );
-  execSync(
-    `cd packages/${packageName} && yarn version ${versionType} && yarn publish`,
-    {
-      stdio: "inherit",
-    },
-  );
-  console.log(`\nSuccessfully published ${packageName}!`);
+  try {
+    // First build the package
+    await buildPackage(packageName);
+
+    console.log(
+      `\nPublishing ${packageName} with ${versionType} version bump...`,
+    );
+    execSync(
+      `cd packages/${packageName} && yarn version ${versionType} && yarn publish`,
+      {
+        stdio: "inherit",
+      },
+    );
+    console.log(`\nSuccessfully published ${packageName}!`);
+  } catch (error) {
+    throw error;
+  }
 };
 
 const main = async () => {
