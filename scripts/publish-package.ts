@@ -1,23 +1,12 @@
 import { execSync } from 'child_process';
 import { readFileSync } from 'fs';
+import inquirer from 'inquirer';
 import { join } from 'path';
-import { createInterface } from 'readline';
 
 interface Package {
   name: string;
   location: string;
 }
-
-const rl = createInterface({
-  input: process.stdin,
-  output: process.stdout,
-});
-
-const question = (query: string): Promise<string> => {
-  return new Promise((resolve) => {
-    rl.question(query, resolve);
-  });
-};
 
 const getPackages = (): Package[] => {
   const output = execSync('yarn workspaces list --json').toString();
@@ -46,33 +35,33 @@ const publishPackage = async (packageName: string, versionType: 'patch' | 'minor
 const main = async () => {
   try {
     const packages = getPackages();
-    const packageChoices = packages.map((pkg) => pkg.name.split('/').pop() || pkg.name);
+    const packageChoices = packages.map((pkg) => ({
+      name: `${pkg.name.split('/').pop()} (current version: ${getPackageVersion(pkg.location)})`,
+      value: pkg.name.split('/').pop() || pkg.name,
+    }));
 
-    console.log('\nAvailable packages:');
-    packageChoices.forEach((pkg, index) => {
-      const version = getPackageVersion(packages[index].location);
-      console.log(`${index + 1}. ${pkg} (current version: ${version})`);
-    });
+    const { selectedPackage } = await inquirer.prompt([
+      {
+        type: 'list',
+        name: 'selectedPackage',
+        message: 'Select a package to publish:',
+        choices: packageChoices,
+      },
+    ]);
 
-    const packageIndex = parseInt(await question('\nSelect a package number: ')) - 1;
-    if (isNaN(packageIndex) || packageIndex < 0 || packageIndex >= packages.length) {
-      throw new Error('Invalid package selection');
-    }
+    const { versionType } = await inquirer.prompt([
+      {
+        type: 'list',
+        name: 'versionType',
+        message: 'Select version bump type:',
+        choices: [
+          { name: 'Patch (0.0.X)', value: 'patch' },
+          { name: 'Minor (0.X.0)', value: 'minor' },
+          { name: 'Major (X.0.0)', value: 'major' },
+        ],
+      },
+    ]);
 
-    const selectedPackage = packageChoices[packageIndex];
-    console.log('\nVersion bump type:');
-    console.log('1. Patch (0.0.X)');
-    console.log('2. Minor (0.X.0)');
-    console.log('3. Major (X.0.0)');
-
-    const versionTypeIndex = parseInt(await question('\nSelect version type (1-3): ')) - 1;
-    const versionTypes: ('patch' | 'minor' | 'major')[] = ['patch', 'minor', 'major'];
-    
-    if (isNaN(versionTypeIndex) || versionTypeIndex < 0 || versionTypeIndex >= versionTypes.length) {
-      throw new Error('Invalid version type selection');
-    }
-
-    const versionType = versionTypes[versionTypeIndex];
     await publishPackage(selectedPackage, versionType);
   } catch (error: unknown) {
     if (error instanceof Error) {
@@ -81,8 +70,6 @@ const main = async () => {
       console.error('An unknown error occurred:', error);
     }
     process.exit(1);
-  } finally {
-    rl.close();
   }
 };
 
