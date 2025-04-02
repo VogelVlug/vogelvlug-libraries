@@ -2692,7 +2692,7 @@ __metadata:
     "@types/react": "npm:^18.3.12"
     "@types/react-dom": "npm:^18"
     "@vitejs/plugin-react": "npm:^4.3.3"
-    "@vogelvlug/typescript-utils": "npm:^1.0.2"
+    "@vogelvlug/typescript-utils": "npm:^1.0.3"
     autoprefixer: "npm:^10.4.20"
     class-variance-authority: "npm:^0.7.0"
     clsx: "npm:^2.1.1"
@@ -2731,16 +2731,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@vogelvlug/typescript-utils@npm:^1.0.2":
-  version: 1.0.3
-  resolution: "@vogelvlug/typescript-utils@npm:1.0.3::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40VogelVlug%2Ftypescript-utils%2F1.0.3%2Fcad7377048b99a6d3ef8d5090dbba659733ebeac"
-  peerDependencies:
-    typescript: ^5.6.3
-  checksum: 10c0/a663eb57cb45ef65bb02029e2d1c98dabbec8f908ca866232816a6844460d966b98a4ecfa506dcfe4e79422a8d6a04989b09966eda6bb6420bbbe09dfde3477a
-  languageName: node
-  linkType: hard
-
-"@vogelvlug/typescript-utils@workspace:packages/typescript-utils":
+"@vogelvlug/typescript-utils@npm:^1.0.3, @vogelvlug/typescript-utils@workspace:packages/typescript-utils":
   version: 0.0.0-use.local
   resolution: "@vogelvlug/typescript-utils@workspace:packages/typescript-utils"
   dependencies:

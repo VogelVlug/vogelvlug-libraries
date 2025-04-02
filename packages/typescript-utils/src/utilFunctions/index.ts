@@ -8,3 +8,4 @@ export * from "./clampByLength";
 export * from "./loadEnv";
 export * from "./unpack";
 export * from "./formatDuration";
+export * from "./tryCatch";
