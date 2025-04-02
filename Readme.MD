@@ -1,4 +1,4 @@
-# @vogelvlug/monorepo
+# @vogelvlug/libraries
 
 This monorepo contains various packages used across different projects:
 
@@ -13,13 +13,13 @@ A comprehensive design system that includes:
 - Base CSS variables
 - Storybook stories for component development
 
-### @vogelvlug/default-locales
+### @vogelvlug/typescript-utils
 
-A package providing default locale configurations for internationalization:
+A package providing TypeScript utility functions and types:
 
-- Predefined locale configurations
-- TypeScript types for locale objects
-- Utility functions for locale management
+- Common TypeScript type definitions
+- Utility functions for type manipulation
+- Shared TypeScript configurations
 
 ## Development
 
