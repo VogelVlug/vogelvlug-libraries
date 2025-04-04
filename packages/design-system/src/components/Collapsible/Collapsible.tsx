@@ -28,6 +28,22 @@ const CollapsibleTrigger: React.FC<
   );
 };
 
-const CollapsibleContent = CollapsiblePrimitive.CollapsibleContent;
+const CollapsibleContent: React.FC<CollapsiblePrimitive.CollapsibleContentProps> = ({
+  children,
+  className,
+  ...props
+}) => {
+  return (
+    <CollapsiblePrimitive.CollapsibleContent
+      className={cn(
+        "overflow-hidden transition-all duration-300 ease-in-out data-[state=closed]:animate-collapse data-[state=open]:animate-expand",
+        className
+      )}
+      {...props}
+    >
+      {children}
+    </CollapsiblePrimitive.CollapsibleContent>
+  );
+};
 
 export { Collapsible, CollapsibleContent, CollapsibleTrigger };

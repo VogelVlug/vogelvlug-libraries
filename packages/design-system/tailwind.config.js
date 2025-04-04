@@ -158,6 +158,20 @@ module.exports = {
           5: "hsl(var(--chart-5))",
         },
       },
+      keyframes: {
+        expand: {
+          from: { height: 0 },
+          to: { height: "var(--radix-collapsible-content-height)" },
+        },
+        collapse: {
+          from: { height: "var(--radix-collapsible-content-height)" },
+          to: { height: 0 },
+        },
+      },
+      animation: {
+        expand: "expand 300ms ease-out",
+        collapse: "collapse 300ms ease-out",
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],
