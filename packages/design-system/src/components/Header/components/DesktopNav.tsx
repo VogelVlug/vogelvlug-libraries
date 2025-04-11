@@ -12,7 +12,7 @@ export const DesktopNav: React.FC<HeaderProps> = ({
   languageSwitcher,
 }) => {
   return (
-    <div className="hidden items-center gap-4 md:flex">
+    <div className="hidden items-center gap-4 lg:flex">
       <NavMenu>
         {mainRoutes.map((route) =>
           route.subroutes && route.subroutes.length > 0 ? (

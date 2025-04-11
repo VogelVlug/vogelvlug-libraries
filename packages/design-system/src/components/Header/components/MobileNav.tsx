@@ -18,7 +18,7 @@ export const MobileNav = ({
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Button variant="outline" size="icon" className="md:hidden">
+        <Button variant="outline" size="icon" className="lg:hidden">
           <MenuIcon className="h-6 w-6" />
           <span className="sr-only">Toggle menu</span>
         </Button>
@@ -49,7 +49,7 @@ export const MobileNav = ({
           {languageSwitcher && (
             <div className="border-b border-default p-6">
               <Typography variant="label" className="mb-4" text="Language" />
-              {languageSwitcher}
+              <div>{languageSwitcher}</div>
             </div>
           )}
         </nav>
