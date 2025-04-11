@@ -1,0 +1,40 @@
+{
+  "name": "@vogelvlug/routing",
+  "version": "1.0.2",
+  "type": "module",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "default": "./dist/index.cjs"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VogelVlug/vogelvlug-libraries.git"
+  },
+  "author": "Markus <markus@vogelvlug.de>",
+  "license": "GPL-3.0-or-later",
+  "scripts": {
+    "build": "rm -rf dist && tsc --p ./tsconfig-build.json && vite build",
+    "publish": "yarn npm publish --access restricted",
+    "release:patch": "yarn version patch && yarn build && yarn publish",
+    "release:minor": "yarn version minor && yarn build && yarn publish",
+    "release:major": "yarn version major && yarn build && yarn publish"
+  },
+  "devDependencies": {
+    "typescript": "~5.6.2",
+    "vite": "^5.4.10",
+    "vite-plugin-dts": "^4.4.0"
+  },
+  "dependencies": {
+    "lucide-react": "^0.487.0"
+  }
+}
