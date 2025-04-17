@@ -1,10 +1,183 @@
-@import "./src/base.css";
+@import './src/base.css' layer(base);
 
-@config "./tailwind.config.js";
+@import 'tailwindcss';
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@plugin 'tailwindcss-animate';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --breakpoint-*: initial;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+
+  --radius-*: initial;
+  --radius-none: 0;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-full: 9999px;
+
+  --color-*: initial;
+  --color-base-transparent: transparent;
+  --color-base-white: rgb(var(--base-white));
+  --color-base-black: rgb(var(--base-black));
+
+  --color-main-100: var(--main-100);
+  --color-main-200: var(--main-200);
+  --color-main-300: var(--main-300);
+  --color-main-400: var(--main-400);
+  --color-main-500: var(--main-500);
+  --color-main-600: var(--main-600);
+  --color-main-700: var(--main-700);
+
+  --color-accent-100: var(--accent-100);
+  --color-accent-200: var(--accent-200);
+  --color-accent-300: var(--accent-300);
+  --color-accent-400: var(--accent-400);
+  --color-accent-500: var(--accent-500);
+  --color-accent-600: var(--accent-600);
+  --color-accent-700: var(--accent-700);
+  --color-accent: var(--neutral-200);
+  --color-accent-foreground: var(--text-default);
+
+  --color-neutral-100: var(--neutral-100);
+  --color-neutral-200: var(--neutral-200);
+  --color-neutral-300: var(--neutral-300);
+  --color-neutral-400: var(--neutral-400);
+  --color-neutral-500: var(--neutral-500);
+  --color-neutral-600: var(--neutral-600);
+  --color-neutral-700: var(--neutral-700);
+
+  --color-success-100: var(--success-100);
+  --color-success-200: var(--success-200);
+  --color-success-300: var(--success-300);
+  --color-success-400: var(--success-400);
+  --color-success-500: var(--success-500);
+  --color-success-600: var(--success-600);
+  --color-success-700: var(--success-700);
+
+  --color-warning-100: var(--warning-100);
+  --color-warning-200: var(--warning-200);
+  --color-warning-300: var(--warning-300);
+  --color-warning-400: var(--warning-400);
+  --color-warning-500: var(--warning-500);
+  --color-warning-600: var(--warning-600);
+  --color-warning-700: var(--warning-700);
+
+  --color-background: var(--background-default);
+  --color-foreground: var(--text-default);
+
+  --color-card: var(--surface-default);
+  --color-card-foreground: var(--text-default);
+
+  --color-popover: var(--surface-default);
+  --color-popover-foreground: var(--text-default);
+
+  --color-primary: var(--fill-main);
+  --color-primary-foreground: var(--fill-main-onfill);
+
+  --color-secondary: var(--fill-accent);
+  --color-secondary-foreground: var(--fill-accent-onfill);
+
+  --color-muted: var(--background-subtle);
+  --color-muted-foreground: var(--text-default);
+
+  --color-destructive: var(--fill-warning);
+  --color-destructive-foreground: var(--fill-warning-onfill);
+
+  --color-border: var(--border-default);
+  --color-input: var(--border-default);
+  --color-ring: var(--neutral-200);
+
+  --color-chart-1: hsl(var(--chart-1));
+  --color-chart-2: hsl(var(--chart-2));
+  --color-chart-3: hsl(var(--chart-3));
+  --color-chart-4: hsl(var(--chart-4));
+  --color-chart-5: hsl(var(--chart-5));
+
+  --font-sans: Poppins, sans-serif;
+
+  --text-lg: 1.25rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 2rem;
+  --text-3xl: 2.5rem;
+  --text-4xl: 3rem;
+
+  --spacing-col-width: var(--column-base-width);
+  --spacing-col-gutter: var(--column-base-gutter);
+
+  --text-color-default: var(--text-default);
+  --text-color-title: var(--text-title);
+  --text-color-subtitle: var(--text-subtitle);
+  --text-color-overtitle: var(--text-overtitle);
+  --text-color-color-main: var(--text-color-main);
+  --text-color-color-accent: var(--text-color-accent);
+  --text-color-caption: var(--text-caption);
+  --text-color-fill-main-onfill: var(--fill-main-onfill);
+  --text-color-fill-accent-onfill: var(--fill-accent-onfill);
+
+  --background-color-transparent: transparent;
+  --background-color-default: var(--background-default);
+  --background-color-subtle: var(--background-subtle);
+  --background-color-surface: var(--surface-default);
+  --background-color-fill-main: var(--fill-main);
+  --background-color-fill-main-hover: var(--fill-main-hover);
+  --background-color-fill-accent: var(--fill-accent);
+  --background-color-fill-accent-hover: var(--fill-accent-hover);
+  --background-color-fill-warning: var(--fill-warning);
+  --background-color-fill-warning-hover: var(--fill-warning-hover);
+
+  --border-color-main: var(--border-color-main);
+  --border-color-accent: var(--fill-accent);
+  --border-color-default: var(--border-default);
+
+  --animate-expand: expand 300ms ease-out;
+  --animate-collapse: collapse 300ms ease-out;
+
+  @keyframes expand {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-collapsible-content-height);
+    }
+  }
+  @keyframes collapse {
+    from {
+      height: var(--radix-collapsible-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
 
 @layer base {
   :root {

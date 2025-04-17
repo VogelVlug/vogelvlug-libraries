@@ -1,6 +1,6 @@
+import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
 import { resolve } from "path";
-import tailwindcss from "tailwindcss";
 import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
 
@@ -13,6 +13,7 @@ export default defineConfig({
       outDir: "dist",
       rollupTypes: true,
     }),
+    tailwindcss(),
   ],
   resolve: {
     alias: {
@@ -31,11 +32,6 @@ export default defineConfig({
       output: {
         banner: "'use client';", // This makes all components client side TODO: Check if we can improve this somehow
       },
-    },
-  },
-  css: {
-    postcss: {
-      plugins: [tailwindcss()],
     },
   },
   define: {
