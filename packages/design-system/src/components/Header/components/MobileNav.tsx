@@ -11,7 +11,8 @@ import { UserMenu } from "./UserMenu";
 export const MobileNav = ({
   mainRoutes,
   userRoutes,
-  authRoutes,
+  loginRoute,
+  signupRoute,
   user,
   languageSwitcher,
 }: HeaderProps) => {
@@ -37,14 +38,15 @@ export const MobileNav = ({
               <UserMenu
                 user={user}
                 userRoutes={userRoutes}
-                authRoutes={authRoutes}
+                loginRoute={loginRoute}
+                signupRoute={signupRoute}
                 isMobile
               />
             </div>
           )}
           <div className="border-b border-default p-6">
             <Typography variant="label" className="mb-4" text="Navigation" />
-            <LinkList routes={mainRoutes} useSheetClose />
+            {mainRoutes && <LinkList routes={mainRoutes} useSheetClose />}
           </div>
           {languageSwitcher && (
             <div className="border-b border-default p-6">

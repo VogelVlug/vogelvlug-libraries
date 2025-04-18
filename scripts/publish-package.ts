@@ -56,7 +56,10 @@ const publishPackage = async (
         stdio: "inherit",
       },
     );
-    console.log(`\nSuccessfully published ${packageName}!`);
+
+    // Get the new version after publishing
+    const newVersion = getPackageVersion(`packages/${packageName}`);
+    console.log(`\nSuccessfully published ${packageName} v${newVersion}!`);
   } catch (error) {
     throw error;
   }

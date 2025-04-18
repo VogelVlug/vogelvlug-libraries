@@ -11,19 +11,22 @@ import {
 } from "../../DropdownMenu/DropdownMenu";
 import { LinkList } from "../../LinkList/LinkList";
 import { NavLink } from "../../NavLink/NavLink";
-import { AuthRoutes, User as UserType } from "../types";
 import { Route } from "../../NavLink/types";
+import { User as UserType } from "../types";
+
 export interface UserMenuProps {
-  user: UserType | null;
-  userRoutes: Route[];
-  authRoutes: AuthRoutes;
+  user?: UserType;
+  userRoutes?: Route[];
+  loginRoute?: Route;
+  signupRoute?: Route;
   isMobile?: boolean;
 }
 
 export const UserMenu: React.FC<UserMenuProps> = ({
   user,
   userRoutes,
-  authRoutes,
+  loginRoute,
+  signupRoute,
   isMobile,
 }) => {
   const { LinkElement } = useDesignSystem();
@@ -31,19 +34,25 @@ export const UserMenu: React.FC<UserMenuProps> = ({
   if (!user)
     return (
       <div className="flex flex-col gap-2 md:flex-row md:gap-4">
-        <Button variant="outline" className="w-full" asChild>
-          <LinkElement href={authRoutes.login.path}>
-            {authRoutes.login.title}
+        {loginRoute && (
+          <Button variant="outline" className="w-full" asChild>
+            <LinkElement href={loginRoute.path}>
+              {loginRoute.title}
           </LinkElement>
-        </Button>
-        <Button className="w-full" asChild>
-          <LinkElement href={authRoutes.signup.path}>
-            {authRoutes.signup.title}
-            <ArrowRight className="h-4 w-4" />
-          </LinkElement>
-        </Button>
+          </Button>
+        )}
+        {signupRoute && (
+          <Button className="w-full" asChild>
+            <LinkElement href={signupRoute.path}>
+              {signupRoute.title}
+              <ArrowRight className="h-4 w-4" />
+            </LinkElement>
+          </Button>
+        )}
       </div>
     );
+
+  if (!userRoutes) return null;
 
   if (isMobile) {
     return <LinkList routes={userRoutes} useSheetClose={true} />;
@@ -63,7 +72,7 @@ export const UserMenu: React.FC<UserMenuProps> = ({
                 alt={user.name ?? "User avatar"}
               />
             ) : (
-              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-muted">
+              <div className="bg-muted flex h-8 w-8 items-center justify-center rounded-full">
                 <span className="h-5 w-5">
                   <User className="h-5 w-5" />
                 </span>
@@ -74,7 +83,7 @@ export const UserMenu: React.FC<UserMenuProps> = ({
             {userRoutes.map((route) => (
               <DropdownMenuItem
                 key={route.path || route.title}
-                className="cursor-pointer rounded-sm px-4 py-2 hover:bg-subtle"
+                className="hover:bg-subtle cursor-pointer rounded-sm px-4 py-2"
                 asChild
               >
                 <NavLink route={route} />

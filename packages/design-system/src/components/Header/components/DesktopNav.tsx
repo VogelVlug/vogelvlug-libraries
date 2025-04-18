@@ -7,14 +7,16 @@ import { UserMenu } from "./UserMenu";
 export const DesktopNav: React.FC<HeaderProps> = ({
   mainRoutes,
   userRoutes,
-  authRoutes,
+  loginRoute,
+  signupRoute,
   user,
   languageSwitcher,
 }) => {
   return (
     <div className="hidden items-center gap-4 lg:flex">
-      <NavMenu>
-        {mainRoutes.map((route) =>
+      {mainRoutes && (
+        <NavMenu>
+        {mainRoutes?.map((route) =>
           route.subroutes && route.subroutes.length > 0 ? (
             <NavMenuItem key={route.path || route.title} title={route.title}>
               {route.subroutes?.map((subroute) => (
@@ -33,15 +35,17 @@ export const DesktopNav: React.FC<HeaderProps> = ({
               title={route.title}
               href={route.path || "#"}
             />
-          ),
-        )}
-      </NavMenu>
+            ),
+          )}
+        </NavMenu>
+      )}
       {languageSwitcher}
       {userRoutes && (
         <UserMenu
           user={user}
           userRoutes={userRoutes}
-          authRoutes={authRoutes!}
+          loginRoute={loginRoute}
+          signupRoute={signupRoute}
         />
       )}
     </div>

@@ -1,5 +1,15 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { DollarSignIcon, DownloadIcon, FilmIcon, HelpCircleIcon, LogInIcon, LogOutIcon, SettingsIcon, UserIcon, UserPlusIcon } from "lucide-react";
+import {
+  DollarSignIcon,
+  DownloadIcon,
+  FilmIcon,
+  HelpCircleIcon,
+  LogInIcon,
+  LogOutIcon,
+  SettingsIcon,
+  UserIcon,
+  UserPlusIcon,
+} from "lucide-react";
 import { Header } from "./Header";
 
 const meta: Meta<typeof Header> = {
@@ -14,17 +24,16 @@ export default meta;
 type Story = StoryObj<typeof Header>;
 
 // Define auth routes for all stories that need them
-const authRoutes = {
-  login: {
-    title: "Login",
-    path: "/login",
-    icon: LogInIcon,
-  },
-  signup: {
-    title: "Sign Up",
-    path: "/signup",
-    icon: UserPlusIcon,
-  },
+const loginRoute = {
+  title: "Login",
+  path: "/login",
+  icon: LogInIcon,
+};
+
+const signupRoute = {
+  title: "Sign Up",
+  path: "/signup",
+  icon: UserPlusIcon,
 };
 
 export const Default: Story = {
@@ -77,8 +86,8 @@ export const Default: Story = {
         icon: SettingsIcon,
       },
     ],
-    authRoutes,
-    user: null,
+    loginRoute,
+    signupRoute,
   },
 };
 
@@ -120,7 +129,6 @@ export const WithoutUserMenu: Story = {
         icon: HelpCircleIcon,
       },
     ],
-    user: null,
   },
 };
 
@@ -162,10 +170,10 @@ export const WithLanguageSwitcher: Story = {
     ...Default.args,
     languageSwitcher: (
       <div className="flex items-center gap-2">
-        <button className="rounded-md border border-input bg-background px-3 py-1 text-sm">
+        <button className="border-input bg-background rounded-md border px-3 py-1 text-sm">
           EN
         </button>
-        <button className="rounded-md border border-input bg-background px-3 py-1 text-sm">
+        <button className="border-input bg-background rounded-md border px-3 py-1 text-sm">
           DE
         </button>
       </div>
@@ -178,4 +186,4 @@ export const HiddenOnPage: Story = {
     ...Default.args,
     hideMenuOnPage: true,
   },
-}; 
+};
