@@ -2836,7 +2836,7 @@ __metadata:
     postcss: "npm:^8.4.47"
     prettier: "npm:^3.3.3"
     prettier-plugin-tailwindcss: "npm:^0.6.11"
-    react-hook-form: "npm:^7.53.2"
+    react-hook-form: "npm:^7.54.2"
     storybook: "npm:^8.6.12"
     tailwind-merge: "npm:^2.5.4"
     tailwindcss: "npm:^4.1.4"
@@ -2848,8 +2848,10 @@ __metadata:
     vite-tsconfig-paths: "npm:^5.1.0"
     zod: "npm:^3.23.8"
   peerDependencies:
+    "@hookform/resolvers": ^3.9.1
     react: ^18.3.1
     react-dom: ^18.3.1
+    react-hook-form: ^7.54.2
   languageName: unknown
   linkType: soft
 
@@ -5541,12 +5543,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-hook-form@npm:^7.53.2":
-  version: 7.55.0
-  resolution: "react-hook-form@npm:7.55.0"
+"react-hook-form@npm:^7.54.2":
+  version: 7.56.1
+  resolution: "react-hook-form@npm:7.56.1"
   peerDependencies:
     react: ^16.8.0 || ^17 || ^18 || ^19
-  checksum: 10c0/9cff0da58d8223dd14e01ac83688e3546edc42cfa557974b6f2f09922ee051e4713fd53abb69c7a815bf3600142a14186b977d69d438da32f63475a8ecf6b452
+  checksum: 10c0/26eafd54bf47167628e34c2f22ea27ea7bdd5b4231a56af5be31ccedfb2a721708b308026ea4a17f2fb15c7b5fff83c0feb4acc7aa07bd6faa8506e917810cab
   languageName: node
   linkType: hard
 

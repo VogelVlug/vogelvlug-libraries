@@ -10,6 +10,7 @@ export * from "./Divider/Divider";
 export * from "./DropdownMenu/DropdownMenu";
 export * from "./Form/Form";
 export * from "./Header/Header";
+export * from "./Icons/TikTokIcon";
 export * from "./Input/Input";
 export * from "./Label/Label";
 export * from "./NavLink/NavLink";
@@ -22,6 +23,7 @@ export * from "./Skeleton/Skeleton";
 export * from "./Switch/Switch";
 export * from "./Table/Table";
 export * from "./Testimonial/Testimonial";
+export * from "./Textarea/Textarea";
 export * from "./Tooltip/Tooltip";
 export * from "./Typography/Typography";
 
