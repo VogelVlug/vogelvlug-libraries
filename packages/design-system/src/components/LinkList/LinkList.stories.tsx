@@ -5,12 +5,9 @@ import {
   FilmIcon,
   HelpCircleIcon,
   LogOutIcon,
-  MenuIcon,
   SettingsIcon,
   UserIcon,
 } from "lucide-react";
-import { Button } from "../Button/Button";
-import { Sheet, SheetContent, SheetTrigger } from "../Sheet/Sheet";
 import { LinkList } from "./LinkList";
 
 const meta: Meta<typeof LinkList> = {
@@ -81,30 +78,6 @@ const userRoutes = [
 ];
 
 export const Default: Story = {
-  args: {
-    routes: sampleRoutes,
-  },
-};
-
-export const WithSheetClose: Story = {
-  render: (args) => (
-    <div className="flex flex-col items-center gap-4">
-      <p className="text-sm text-muted-foreground">
-        Click the button below to open the sheet
-      </p>
-      <Sheet>
-        <SheetTrigger asChild>
-          <Button variant="outline" size="icon">
-            <MenuIcon className="h-5 w-5" />
-            <span className="sr-only">Open menu</span>
-          </Button>
-        </SheetTrigger>
-        <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-          <LinkList {...args} useSheetClose />
-        </SheetContent>
-      </Sheet>
-    </div>
-  ),
   args: {
     routes: sampleRoutes,
   },

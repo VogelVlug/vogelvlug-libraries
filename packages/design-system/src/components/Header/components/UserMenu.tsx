@@ -55,7 +55,7 @@ export const UserMenu: React.FC<UserMenuProps> = ({
   if (!userRoutes) return null;
 
   if (isMobile) {
-    return <LinkList routes={userRoutes} useSheetClose={true} />;
+    return <LinkList routes={userRoutes} />;
   }
 
   return (

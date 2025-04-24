@@ -5,7 +5,6 @@ export type Route = {
   icon?: LucideIcon;
   description?: string;
   subroutes?: Route[];
-} & (
-    | { path: string; callback?: never }
-    | { path?: never; callback: () => void }
-  );
+  path?: string;
+  callback?: () => void;
+}

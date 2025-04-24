@@ -13,7 +13,8 @@
     "release:minor": "yarn workspaces foreach -pi --all run release:minor",
     "release:major": "yarn workspaces foreach -pi --all run release:major",
     "publish:package": "NODE_NO_WARNINGS=1 node --loader ts-node/esm scripts/publish-package.ts",
-    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
+    "storybook": "yarn workspace @vogelvlug/design-system storybook"
   },
   "devDependencies": {
     "@types/inquirer": "^9.0.7",

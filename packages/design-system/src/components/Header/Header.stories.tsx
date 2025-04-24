@@ -60,7 +60,7 @@ export const Default: Story = {
       },
       {
         title: "Pricing",
-        path: "/#pricing",
+        path: "#pricing",
         icon: DollarSignIcon,
       },
       {

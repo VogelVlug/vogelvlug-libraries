@@ -13,4 +13,12 @@ export interface HeaderProps {
   userRoutes?: Route[];
   loginRoute?: Route;
   signupRoute?: Route;
+  translations?: HeaderTranslations;
+}
+
+export interface HeaderTranslations {
+  menu: string;
+  navigation: string;
+  language: string;
+  account: string;
 }

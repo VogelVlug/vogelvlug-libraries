@@ -44,13 +44,13 @@ const NavLinkContent: React.FC<NavLinkProps> = ({
     return (
       <>
         {route.icon && !hideIcon ? (
-          <span className="h-6 w-6 text-color-accent">
+          <span className="text-color-accent h-6 w-6">
             <route.icon className="h-6 w-6" />
           </span>
         ) : null}
         <span className="inline-flex flex-col">
           <span className="text-sm font-bold">{route.title}</span>
-          <span className="text-xs text-subtitle">{route.description}</span>
+          <span className="text-subtitle text-xs">{route.description}</span>
         </span>
       </>
     );
@@ -64,15 +64,13 @@ export const NavLink: React.FC<NavLinkProps> = ({
 }) => {
   const { LinkElement } = useDesignSystem();
 
-  const Element = route.callback ? "button" : LinkElement;
-
   return (
-    <Element
+    <LinkElement
       className={cn(navLinkVariants({ variant }), className)}
       onClick={route.callback}
       href={route.path || "#"}
     >
       <NavLinkContent route={route} variant={variant} hideIcon={hideIcon} />
-    </Element>
+    </LinkElement>
   );
 };

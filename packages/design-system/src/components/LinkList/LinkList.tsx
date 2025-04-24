@@ -7,34 +7,12 @@ import {
 } from "../Collapsible/Collapsible";
 import { NavLink } from "../NavLink/NavLink";
 import { Route } from "../NavLink/types";
-import { SheetClose } from "../Sheet/Sheet";
 
 export interface LinkListProps {
   routes: Route[];
-  useSheetClose?: boolean;
 }
 
-// Component to render a route item with optional sheet close
-const RouteItem: React.FC<{
-  route: Route;
-  useSheetClose?: boolean;
-  isSubroute?: boolean;
-}> = ({ route, useSheetClose = false, isSubroute = false }) => {
-  const content = <NavLink route={route} variant={isSubroute ? "withDescription" : "default"} />;
-
-  if (!useSheetClose) return <div>{content}</div>;
-
-  return (
-    <SheetClose asChild>
-      <div>{content}</div>
-    </SheetClose>
-  );
-};
-
-export const LinkList: React.FC<LinkListProps> = ({
-  routes,
-  useSheetClose = false,
-}) => {
+export const LinkList: React.FC<LinkListProps> = ({ routes }) => {
   return (
     <nav className="flex flex-col gap-2">
       {routes.map((route) => {
@@ -52,11 +30,10 @@ export const LinkList: React.FC<LinkListProps> = ({
               <CollapsibleContent>
                 <div className="flex flex-col gap-2 pt-2">
                   {route.subroutes.map((subroute) => (
-                    <RouteItem
+                    <NavLink
                       key={subroute.path || subroute.title}
                       route={subroute}
-                      useSheetClose={useSheetClose}
-                      isSubroute
+                      variant="withDescription"
                     />
                   ))}
                 </div>
@@ -67,10 +44,10 @@ export const LinkList: React.FC<LinkListProps> = ({
 
         // Handle regular routes
         return (
-          <RouteItem
+          <NavLink
             key={route.path || route.title}
             route={route}
-            useSheetClose={useSheetClose}
+            variant={"default"}
           />
         );
       })}
